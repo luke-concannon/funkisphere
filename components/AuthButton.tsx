@@ -12,14 +12,14 @@ export default async function AuthButton() {
   } = await supabase.auth.getUser()
 
   const signOut = async () => {
-    'use server'
+             'use server'
 
     const cookieStore = cookies()
     const supabase = createClient(cookieStore)
     await supabase.auth.signOut()
     return redirect('/login')
   }
-
+  
   return user ? (
     <div className="flex items-center gap-4">
       Hey, {user.email}!

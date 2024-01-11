@@ -1,0 +1,73 @@
+{
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.runtime": "/Users/lumirari/.nvm/versions/node/v18.17.1/bin/node",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "eslint.run": "onSave",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact"
+    ],
+    "eslint.debug": true,
+    "eslint.format.enable": true,
+    "workbench.iconTheme": "vscode-icons",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "workbench.editorAssociations": {
+        "*.pdf": "analyticsignal.preview-pdf"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "eslint.workingDirectories": [
+        "apps/*",
+        "packages/*"
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "css.lint.unknownAtRules": "ignore",
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "tailwindCSS.includeLanguages": {
+        "html": "html",
+        "javascript": "javascript",
+    },
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "style",
+        ".*Style*",
+        ".*Styles*"
+    ],
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+}
