@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,11 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          blue: "#D8FF5A",
-green: "#FF61D3",
-yellow: "#FFCE70",
-        }
+        funk: {
+          lime: '#D8FF5A',
+          pink: '#FF61D3',
+          mango: '#ffae70',
+        },
+      },
+      fontFamily: {
+        bungee: ['var(--font-bungee)', ...fontFamily.serif],
+        bungeeOutline: ['var(--font-bungeeOutline)', ...fontFamily.serif],
+        pacifico: ['var(--font-pacifico)', ...fontFamily.sans],
       },
     },
   },

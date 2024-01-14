@@ -24,10 +24,6 @@
         "*.pdf": "analyticsignal.preview-pdf"
     },
     "vsicons.dontShowNewVersionMessage": true,
-    "eslint.workingDirectories": [
-        "apps/*",
-        "packages/*"
-    ],
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -58,16 +54,22 @@
     },
     "tailwindCSS.includeLanguages": {
         "html": "html",
-        "javascript": "javascript",
+        "javascript": "javascript"
     },
     "tailwindCSS.classAttributes": [
         "class",
         "className",
         "style",
-        ".*Style*",
-        ".*Styles*"
+        ".*Styles*" // Add ".*Styles*" (or whatever matches your naming scheme)
     ],
     "editor.quickSuggestions": {
         "strings": true
     },
+    "prettier.semi": false,
+    "prettier.trailingComma": "es5",
+    "prettier.bracketSpacing": true,
+    "prettier.printWidth": 80,
+    "prettier.tabWidth": 2,
+    "prettier.singleQuote": true,
+    "prettier.arrowParens": "avoid",
 }
