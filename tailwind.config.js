@@ -17,7 +17,7 @@ module.exports = {
       fontFamily: {
         bungee: ['var(--font-bungee)', ...fontFamily.serif],
         bungeeOutline: ['var(--font-bungeeOutline)', ...fontFamily.serif],
-        pacifico: ['var(--font-pacifico)', ...fontFamily.sans],
+        source: ['var(--font-sourceSans)', ...fontFamily.sans],
       },
     },
   },

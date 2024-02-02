@@ -1,10 +1,10 @@
-import { Bungee, Bungee_Outline, Pacifico } from 'next/font/google'
-import './styles/globals.css'
+import { Bungee, Bungee_Outline, Source_Sans_3 } from 'next/font/google'
+import '../styles/globals.css'
 
-const pacifico = Pacifico({
+const sourceSans = Source_Sans_3({
   weight: '400',
   display: 'swap',
-  variable: '--font-sourceSans',
+  variable: '--font-sourceSans3',
   subsets: ['latin'],
 })
 
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${pacifico.variable} ${bungee.variable} ${bungeeOutline.variable}`}
+      className={`${sourceSans.variable} ${bungee.variable} ${bungeeOutline.variable}`}
     >
       <body className='w-full'>
         <main className='h-screen flex flex-col items-center'>{children}</main>
