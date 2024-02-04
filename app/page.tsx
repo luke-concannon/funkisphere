@@ -1,16 +1,25 @@
 import Link from 'next/link'
-import { Bars3Icon, BoltIcon, XMarkIcon } from '@heroicons/react/24/solid'
-import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
+import {
+  BoltIcon,
+  XMarkIcon,
+  ArrowLeftCircleIcon,
+  EllipsisHorizontalIcon,
+} from '@heroicons/react/24/solid'
+import {
+  ArrowDownCircleIcon,
+  EllipsisHorizontalCircleIcon,
+} from '@heroicons/react/24/outline'
+import { FadeOutWrapper } from '@components/FadeOutWrapper'
 
 export default async function HomePage({
   searchParams,
 }: {
   searchParams: { [key: string]: String }
 }) {
-  const { open_menu } = searchParams
+  const { main_menu, menu_open } = searchParams
 
   return (
-    <div className='w-full flex flex-col relative items-center justify-center h-full overflow-hidden'>
+    <div className='w-full flex flex-col relative items-center justify-center h-full overflow-hidden bg-funk-mango'>
       <div className='h-[100vw] max-h-[100vh] flex-wrap flex flex-row aspect-square relative'>
         <div className='absolute h-full w-full flex flex-col'>
           <div className='h-1/3  flex items-center flex-row justify-end w-full'>
@@ -47,57 +56,71 @@ export default async function HomePage({
         ))}
       </div>
       <Link
-        href={`?open_menu=main`}
-        className='absolute flex justify-center items-center h-20 bottom-0 left-0 w-full'
+        href={`?main_menu=open`}
+        className='absolute flex justify-center h-20 items-center bottom-0 left-0 w-full'
       >
-        <BoltIcon className='h-10 w-10 fill-funk-mango' />
+        <EllipsisHorizontalIcon className='h-14 w-14 ' />
       </Link>
 
-      {open_menu === 'main' && <MainMenu />}
-      {open_menu === 'dance' && <DanceMenu />}
+      {main_menu && <MainMenu />}
+      {menu_open === 'dance' && <DanceMenu />}
     </div>
   )
 }
 
 function MainMenu() {
   return (
-    <nav className={`w-full h-full absolute top-0 left-0 bg-white`}>
+    // <FadeOutWrapper>
+    <nav
+      className={`w-full h-full absolute top-0 left-0 bg-white animate-slideRight`}
+    >
       <ul className={`w-full h-full flex flex-col items-center`}>
-        <li
-          className={`font-bungee p-6 text-white text-4xl w-full h-1/3 flex flex-col items-center justify-center  bg-funk-pink`}
+        <Link
+          href={`?main_menu=open&menu_open=dance`}
+          className={`w-full h-1/3 bg-funk-pink`}
         >
-          <Link href={`?open_menu=dance`}>DANCE</Link>
-        </li>
-        <li
-          className={`font-bungee text-white text-4xl w-full h-1/3 flex items-center justify-center flex-col bg-funk-mango`}
-        >
-          <Link href={`/`}>YOGA</Link>
-        </li>
-        <li
-          className={`font-bungee text-white text-4xl w-full h-1/3 items-center flex justify-center  bg-funk-lime`}
-        >
-          <Link href={`/`}>VIDEOGRAPHY</Link>
-        </li>
+          <li
+            className={`font-bungee p-6 text-white text-4xl w-full h-full flex flex-col items-center justify-center`}
+          >
+            <p>DANCE</p>
+          </li>
+        </Link>
+        <Link href={`#`} className={`w-full h-1/3 bg-funk-mango`}>
+          <li
+            className={`font-bungee p-6 text-white text-4xl w-full h-full flex flex-col items-center justify-center`}
+          >
+            <p>YOGA</p>
+            <p className='text-sm font-sans'>- Coming Soon -</p>
+          </li>
+        </Link>
+        <Link href={`#`} className={`w-full h-1/3 bg-funk-lime`}>
+          <li
+            className={`font-bungee p-6 text-white text-4xl w-full h-full flex flex-col items-center justify-center`}
+          >
+            <p>VIDEOGRAPHY</p>
+            <p className='text-sm font-sans'>- Coming Soon -</p>
+          </li>
+        </Link>
       </ul>
-      <Link
-        href={`/`}
-        className='absolute flex justify-end items-center h-20 top-0 left-0 w-full pr-6'
-      >
+      <Link href={`/`} className='absolute h-20 top-6 right-6'>
         <XMarkIcon className='h-10 w-10 fill-white' />
       </Link>
     </nav>
+    // </FadeOutWrapper>
   )
 }
 
 function DanceMenu() {
   return (
-    <nav className={`w-full h-full absolute top-0 left-0 bg-white`}>
+    <nav
+      className={`w-full h-full absolute top-0 left-0 bg-white animate-slideRight`}
+    >
       <ul className={`w-full h-full flex flex-col`}>
         <li
-          className={` text-white text-4xl w-full h-1/4 flex p-6 bg-funk-pink shrink-0 grow-0`}
+          className={`text-white text-4xl w-full h-1/4 flex p-6 bg-funk-pink shrink-0 grow-0`}
         >
           <Link
-            href={`?open_menu=dance`}
+            href={`#`}
             className='h-full w-full justify-center flex flex-col'
           >
             <p className=' font-bungee'>BIG SHAPES</p>
@@ -110,7 +133,7 @@ function DanceMenu() {
           className={` text-4xl w-full h-1/4 flex p-6 bg-white shrink-0 grow-0`}
         >
           <Link
-            href={`?open_menu=dance`}
+            href={`#`}
             className='h-full w-full justify-center flex flex-col'
           >
             <p className=' font-bungee'>DOVES</p>
@@ -123,7 +146,7 @@ function DanceMenu() {
           className={` text-white text-4xl w-full h-1/4 flex p-6 bg-funk-pink shrink-0 grow-0`}
         >
           <Link
-            href={`?open_menu=dance`}
+            href={`#`}
             className='h-full w-full justify-center flex flex-col'
           >
             <p className=' font-bungee'>LITTLE FUNKERS</p>
@@ -133,10 +156,10 @@ function DanceMenu() {
           </Link>
         </li>
         <li
-          className={`  text-4xl w-full h-1/4 flex p-6 bg-white shrink-0 grow-0`}
+          className={`text-4xl w-full h-1/4 flex p-6 bg-white shrink-0 grow-0`}
         >
           <Link
-            href={`?open_menu=dance`}
+            href={`#`}
             className='h-full w-full justify-center flex flex-col'
           >
             <p className=' font-bungee'>MOTHER FUNKERS</p>
@@ -146,11 +169,8 @@ function DanceMenu() {
           </Link>
         </li>
       </ul>
-      <Link
-        href={`/`}
-        className='absolute flex justify-end items-center h-20 top-0 left-0 w-full pr-6'
-      >
-        <XMarkIcon className='h-10 w-10 fill-white' />
+      <Link href={`/?main_menu=open`} className='absolute h-20 top-6 right-6'>
+        <ArrowLeftCircleIcon className='h-10 w-10 fill-white' />
       </Link>
     </nav>
   )
