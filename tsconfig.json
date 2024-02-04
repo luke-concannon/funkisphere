@@ -28,7 +28,10 @@
         "./*"
       ],
       "@styles/*": [
-        "./app/styles/*"
+        "./styles/*"
+      ],
+      "@components/*": [
+        "./app/_components/*"
       ],
     }
   },
