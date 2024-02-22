@@ -1,112 +1,77 @@
 import Link from 'next/link'
-import { Bars3Icon } from '@heroicons/react/24/solid'
-import Image from 'next/image'
+import { BoltIcon } from '@heroicons/react/24/solid'
+import { Logo } from '@/app/_components'
 
 export default async function HomePage() {
   return (
-    <div className='w-full flex bg-funk-mango flex-col'>
-      <nav className='flex flex-row justify-end items-center w-full px-10 py-4'>
-        <button>
-          <Bars3Icon className='h-8 w-8 text-slate-900' />
-        </button>
+    <div className='w-full flex bg-funk-mang flex-col relative'>
+      <nav className='w-full h-32'>
+        <Link className='flex w-full bg-funk-mang' href='/'>
+          <div className='w-24 absolute left-6 top-6'>
+            <Logo />
+          </div>
+          <div className='flex text-2xl pl-2 flex-col absolute left-6 top-6 font-bungeeOutline'>
+            <h1 className=''>THE</h1>
+            <h1 className=''>FUNKIS</h1>
+            <h1 className=''>PHERE</h1>
+          </div>
+        </Link>
+
+        <div className='w-1/2 text-right absolute top-8 right-6 text-4xl font-bungee text-slate-900'>
+          <h2>Little Funkers</h2>
+        </div>
       </nav>
-      <div className='w-full flex flex-col space-y-16 px-20 pb-20 pt-10'>
-        <section className='flex flex-row space-x-16 w-full'>
-          <div className='w-2/3 flex flex-col'>
-            <h1 className='font-bungeeOutline text-7xl'>Little Funkers</h1>
-            <h2 className='font-bungee text-lg'>
-              Kids dance classes in Schools
-            </h2>
-            <p className='pt-2'>
-              Man-of-war capstan warp piracy mutiny belay lass. Broadside parrel
-              Sea Legs yard lateen sail Admiral of the Black interloper. Capstan
-              hearties scuppers lad crack Jennys tea cup Sink me jack. Nipper
-              salmagundi skysail loot square-rigged hornswaggle lanyard. Skysail
-              haul wind provost lass Corsair jack line. Yard rope&apos;s end
-              smartly Admiral of the Black Yellow Jack trysail fire in the hole.
-              Buccaneer Brethren of the Coast topsail Barbary Coast Yellow Jack
-              log nipperkin. Keel ho parrel Yellow Jack lateen sail wench line.
-            </p>
-          </div>
-          <div className='w-1/3 h-full bg-gray-200 rounded'></div>
-        </section>
-        <div className='w-full h-px bg-gray-200' />
-        <section className='w-full flex flex-row justify-between'>
-          <div className='flex flex-col items-center space-y-6 w-[30%]'>
-            <div className='w-full h-[120px] flex justify-center'>
-              <Image
-                src='/images/tps-logo.png'
-                alt='Takaka Primary School'
-                width={500}
-                height={500}
-                className='object-contain'
-              />
-            </div>
-            <div className='space-y-2'>
-              {/* <h3 className='text-slate-900 text-2xl font-bungee'>
-                Takaka Primary School
-              </h3> */}
-              <p className='text-slate-900 font-sans '>
-                Man-of-war capstan warp piracy mutiny belay lass. Broadside
-                parrel Sea Legs yard lateen sail Admiral of the Black
-                interloper. Capstan hearties scuppers lad crack Jennys tea cup
-                Sink me jack. Nipper salmagundi skysail loot square-rigged
-                hornswaggle lanyard. Skysail haul wind provost lass Corsair jack
-                line. Yard rope&apos;s end smartly Admiral of the Black Yellow
-                Jack trysail fire in the hole. Buccaneer Brethren of the Coast
-                topsail Barbary Coast Yellow Jack log nipperkin. Keel ho parrel
-                Yellow Jack lateen sail wench line.
-              </p>
-            </div>
-          </div>
-          <div className='flex flex-col items-center space-y-6 w-[30%]'>
-            {/* <div className='rounded h-52 w-full bg-gray-200' /> */}
-            <div className='w-full h-[120px] flex justify-center items-center'>
-              <Image
-                src='/images/motupipi-school-logo.png'
-                alt='Motupipi School'
-                width={500}
-                height={500}
-                className='object-contain'
-              />
-            </div>
-            <div className='space-y-2 '>
-              {/* <h3 className='text-slate-900 text-2xl font-bungee'>
-                Motupipi School
-              </h3> */}
-              <p className='text-slate-900 font-sans '>
-                Man-of-war capstan warp piracy mutiny belay lass. Broadside
-                parrel Sea Legs yard lateen sail Admiral of the Black
-                interloper. Capstan hearties scuppers lad crack Jennys tea cup
-                Sink me jack. Nipper salmagundi skysail loot square-rigged
-                hornswaggle lanyard. Skysail haul wind provost lass Corsair jack
-                line. Yard rope&apos;s end smartly Admiral of the Black Yellow
-                Jack trysail fire in the hole. Buccaneer Brethren of the Coast
-                topsail Barbary Coast Yellow Jack log nipperkin. Keel ho parrel
-                Yellow Jack lateen sail wench line.
-              </p>
-            </div>
-          </div>
-          <div className='flex flex-col items-center space-y-6 w-[30%]'>
-            <div className='rounded h-52 w-full bg-gray-200' />
-            <div className='space-y-2 '>
-              <h3 className='text-slate-900 text-2xl font-bungee'>
-                Takaka Central School
-              </h3>
-              <p className='text-slate-900 font-sans '>
-                Man-of-war capstan warp piracy mutiny belay lass. Broadside
-                parrel Sea Legs yard lateen sail Admiral of the Black
-                interloper. Capstan hearties scuppers lad crack Jennys tea cup
-                Sink me jack. Nipper salmagundi skysail loot square-rigged
-                hornswaggle lanyard. Skysail haul wind provost lass Corsair jack
-                line. Yard rope&apos;s end smartly Admiral of the Black Yellow
-                Jack trysail fire in the hole. Buccaneer Brethren of the Coast
-                topsail Barbary Coast Yellow Jack log nipperkin. Keel ho parrel
-                Yellow Jack lateen sail wench line.
-              </p>
-            </div>
-          </div>
-        </section>
+      <div className='pb-10 flex flex-col relative'>
+        <div className='absolute w-2/5 h-px bg-funk-pink right-0 top-0' />
+
+        <ul className='pt-6 px-10 font-source space-y-1 list-disc relative list-inside font-bold text-slate-900 text-lg mb-6'>
+          <li>Term Fees, $10 per week</li>
+          <li>2 classes, 5-7yrs | 8-11yrs</li>
+          <li>TPS, Motupipi & Central</li>
+        </ul>
+        <div className='w-2/3 mb-6 h-px bg-funk-pink' />
+        <p className='p-10 text-slate-900 text-lg mb-6'>
+          Little Funkers in-school therapeutic dance classes focus on building
+          expression, confidence, connection and well being, the program aims to
+          increase access, awareness and equity for tamariki attending
+          professional dance classes. The classes cover a range of styles.
+        </p>
+
+        <div className='p-10 bg-funk-pink'>
+          <h2 className='font-bungee mb-2 text-xl text-white'>
+            Wriggle & Jump
+          </h2>
+          <p className='text-slate-900 text-lg'>
+            This class is all about supporting akonga who need to wriggle, jump
+            and express themselves. For many tamariki, having the opportunity to
+            do this during their school day can make a huge difference to their
+            health, happiness and learning.
+          </p>
+        </div>
+
+        <div className='bg-funk-green p-10 '>
+          <h2 className='font-bungee mb-2 text-xl text-white'>
+            Easier for Whanau
+          </h2>
+          <p className='text-slate-900 text-lg'>
+            We know from experience that classes can be a big commitment for
+            families. By incorporating classes into their regular schooling week
+            and removing the pressure to rehearse/perform/buy gear/buy costumes,
+            we aim to make life a little easier for whanau.
+          </p>
+        </div>
+
+        <div className='  bg-funk-mango p-10'>
+          <h2 className='font-bungee mb-2 text-xl text-white'>
+            Celebrate our Talent
+          </h2>
+          <p className='text-slate-900 text-lg'>
+            We have an amazing arts community here in Golden Bay. Little Funkers
+            classes aim to share a safe space for our talented young dancers to
+            build confidence, improvise and learn conventional dance movements,
+            whilst building strength and flexibility.
+          </p>
+        </div>
       </div>
     </div>
   )

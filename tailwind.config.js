@@ -12,6 +12,10 @@ module.exports = {
           lime: '#D8FF5A',
           pink: '#FF61D3',
           mango: '#ffae70',
+          green: '#7ED957',
+          darkGreen: '#008037',
+          darkPink: '#FB92FF',
+          red: '#CA3800',
         },
       },
       fontFamily: {
