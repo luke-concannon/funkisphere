@@ -1,10 +1,14 @@
-import { Bungee, Bungee_Outline, Source_Sans_3 } from 'next/font/google'
+import {
+  Bungee,
+  Bungee_Outline,
+  Source_Sans_3,
+  Open_Sans,
+} from 'next/font/google'
 import '../styles/globals.css'
 
-const sourceSans = Source_Sans_3({
-  weight: '400',
+const openSans = Open_Sans({
   display: 'swap',
-  variable: '--font-sourceSans3',
+  variable: '--font-openSans',
   subsets: ['latin'],
 })
 
@@ -40,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${sourceSans.variable} ${bungee.variable} ${bungeeOutline.variable}`}
+      className={`${openSans.variable} ${bungee.variable} ${bungeeOutline.variable}`}
     >
       <body className='w-full'>
         <main className='h-screen flex flex-col items-center'>{children}</main>

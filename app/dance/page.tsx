@@ -45,7 +45,7 @@ export default async function HomePage() {
               {/* <h3 className='text-slate-900 text-2xl font-bungee'>
                 Takaka Primary School
               </h3> */}
-              <p className='text-slate-900 font-sans '>
+              <p className='text-slate-900 font-openSans '>
                 Man-of-war capstan warp piracy mutiny belay lass. Broadside
                 parrel Sea Legs yard lateen sail Admiral of the Black
                 interloper. Capstan hearties scuppers lad crack Jennys tea cup
@@ -72,7 +72,7 @@ export default async function HomePage() {
               {/* <h3 className='text-slate-900 text-2xl font-bungee'>
                 Motupipi School
               </h3> */}
-              <p className='text-slate-900 font-sans '>
+              <p className='text-slate-900 font-openSans '>
                 Man-of-war capstan warp piracy mutiny belay lass. Broadside
                 parrel Sea Legs yard lateen sail Admiral of the Black
                 interloper. Capstan hearties scuppers lad crack Jennys tea cup
@@ -91,7 +91,7 @@ export default async function HomePage() {
               <h3 className='text-slate-900 text-2xl font-bungee'>
                 Takaka Central School
               </h3>
-              <p className='text-slate-900 font-sans '>
+              <p className='text-slate-900 font-openSans '>
                 Man-of-war capstan warp piracy mutiny belay lass. Broadside
                 parrel Sea Legs yard lateen sail Admiral of the Black
                 interloper. Capstan hearties scuppers lad crack Jennys tea cup
