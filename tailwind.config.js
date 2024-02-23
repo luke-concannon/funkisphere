@@ -16,12 +16,13 @@ module.exports = {
           darkGreen: '#008037',
           darkPink: '#FB92FF',
           red: '#CA3800',
+          yellow: '#ffff33',
         },
       },
       fontFamily: {
         bungee: ['var(--font-bungee)', ...fontFamily.serif],
         bungeeOutline: ['var(--font-bungeeOutline)', ...fontFamily.serif],
-        source: ['var(--font-sourceSans)', ...fontFamily.sans],
+        openSans: ['var(--font-openSans)', ...fontFamily.sans],
       },
       keyframes: {
         slideRight: {
