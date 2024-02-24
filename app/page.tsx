@@ -4,84 +4,91 @@ import {
   XMarkIcon,
   ArrowRightCircleIcon,
 } from '@heroicons/react/24/solid'
-import {
-  ArrowDownCircleIcon,
-  ArrowLeftCircleIcon,
-  EllipsisHorizontalCircleIcon,
-  ArrowUturnLeftIcon,
-} from '@heroicons/react/24/outline'
-import { FadeOutWrapper } from '@components/FadeOutWrapper'
+import Image from 'next/image'
 
 export default async function HomePage({
   searchParams,
 }: {
   searchParams: { [key: string]: String }
 }) {
-  const { main_menu, menu_open } = searchParams
+  const { main_menu } = searchParams
 
   return (
-    <div className='w-full flex flex-col bg-funk-pink relative items-center justify-center h-full overflow-hidden '>
-      <div className='h-[100vw] max-h-[100vh] flex-wrap flex flex-row relative aspect-square'>
-        <div className='absolute md:bottom-auto bottom-[120%] left-1/2 -ml-36 w-72 md:left-44 md:h-full md:w-20 flex '>
-          <p className='text-white text-center md:-rotate-90 md:whitespace-nowrap font-bungee md:origin-center text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl'>
+    <div className='w-full bg-funk-pink h-full items-center relative flex lg:flex-row overflow-hidden'>
+      <div className='flex lg:flex-row lg:justify-between lg:items-center lg:w-full lg:p-20 flex-col relative'>
+        <div className='fixed top-0 left-0 w-full p-12 lg:top-0 lg:left-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
+          <p className='text-white lg:-rotate-90 origin-center text-center lg:whitespace-nowrap font-bungee text-2xl sm:text-4xl lg:text-4xl 2xl:text-5xl'>
             The Creative Mahi of Milo Haigh
           </p>
         </div>
+        <div className='lg:h-[50vw] z-50 lg:min-h-[50vw] h-[100vw] flex-wrap flex flex-row relative aspect-square'>
+          <div className='absolute h-full w-full flex flex-col text-slate-900 text-[5rem] sm:text-[8rem] md:text-[11rem] lg:text-[7rem] xl:text-[9rem] 2xl:text-[11rem]'>
+            <div className='h-1/3  flex items-center flex-row justify-end w-full'>
+              <div className='h-full relative flex items-center w-[85%]'>
+                <p className='w-full '>THE</p>
+              </div>
+            </div>
+            <div className='h-1/3 flex items-center flex-row justify-end w-full'>
+              <div className='h-full relative flex items-center w-[85%]'>
+                <p className='w-full'>FUNKIS</p>
+              </div>
+            </div>
+            <div className='h-1/3 flex items-center flex-row justify-end w-full'>
+              <div className='h-full flex items-center w-[85%]'>
+                <p className='w-full'>PHERE</p>
+              </div>
+            </div>
+          </div>
 
-        <div className='absolute h-full w-full flex flex-col'>
-          <div className='h-1/3  flex items-center flex-row justify-end w-full'>
-            <div className='h-full relative flex items-center w-[85%]'>
-              <p className='w-full text-slate-900 font-bungee text-7xl sm:text-[8rem] md:text-[9rem] 2xl:text-[10rem]'>
-                THE
-              </p>
-            </div>
-          </div>
-          <div className='h-1/3 flex items-center flex-row justify-end w-full'>
-            <div className='h-full relative flex items-center w-[85%]'>
-              <p className='w-full text-slate-900 font-bungee text-7xl sm:text-[8rem] md:text-[9rem] 2xl:text-[10rem]'>
-                FUNKIS
-              </p>
-            </div>
-          </div>
-          <div className='h-1/3 flex items-center flex-row justify-end w-full'>
-            <div className='h-full flex items-center w-[85%]'>
-              <p className='w-full text-slate-900 font-bungee text-7xl sm:text-[8rem] md:text-[9rem] 2xl:text-[10rem]'>
-                PHERE
-              </p>
-            </div>
-          </div>
+          {Array.from({ length: 9 }).map((_, index) => (
+            <div
+              key={index}
+              className='rounded-full hover:bg-funk-mango bg-funk-lime h-1/3 w-1/3'
+            />
+          ))}
         </div>
-
-        {Array.from({ length: 9 }).map((_, index) => (
-          <div
-            key={index}
-            className='rounded-full hover:bg-funk-mango bg-funk-lime h-1/3 w-1/3'
-          />
-        ))}
+        <Image
+          src='/images/angel-of-funk.png'
+          alt='The Funkisphere'
+          width={500}
+          height={800}
+          className='absolute top-0 right-0 w-1/2 h-full object-cover'
+        />
+        <nav className='fixed top-0 left-0 w-full p-12 lg:top-auto lg:left-auto lg:bottom-0 lg:right-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
+          <ul className='rotate-90 origin-center text-center lg:flex hidden flex-row space-x-10 text-white text-3xl '>
+            <Link href={`/dance`}>
+              <li className=' font-bungee hover:text-funk-yellow ease-in-out duration-150'>
+                DANCE
+              </li>
+            </Link>
+            <li className='font-bungee cursor-default ease-in-out duration-150'>
+              YOGA
+            </li>
+            <li className=' font-bungee cursor-default ease-in-out duration-150'>
+              VIDEOGRAPHY
+            </li>
+          </ul>
+        </nav>
       </div>
-      <Link
-        href={`?main_menu=open`}
-        className='absolute h-24 w-24 group sm:h-14 sm:w-14 sm:bottom-10 sm:right-10 bottom-4 right-1/2 -mr-12 sm:mr-0'
-      >
-        <BoltIcon className='h-full flex sm:hidden fill-funk-yellow' />
-        <ArrowRightCircleIcon className='h-full ease-in-out duration-150 group-hover:scale-110 hidden sm:flex fill-slate-100 group-hover:fill-white' />
-      </Link>
+
       {main_menu && <MainMenu />}
-      {menu_open === 'dance' && <DanceMenu />}
-      <ul className='md:flex hidden flex-col absolute right-6 space-y-4 text-white text-3xl text-right'>
-        <li className=' ease-in-out duration-150 cursor-default'>ABOUT</li>
-        <div className='w-full h-px bg-white' />
-        <Link href={`?main_menu=open&menu_open=dance`}>
-          <li className='hover:text-funk-yellow hover:-translate-x-2 ease-in-out duration-150'>
-            DANCE
-          </li>
-        </Link>
-        <div className='w-full h-px bg-white' />
-        <li className='cursor-default ease-in-out duration-150'>YOGA</li>
-        <div className='w-full h-px bg-white' />
-        <li className='cursor-default ease-in-out duration-150'>VIDEOGRAPHY</li>
-      </ul>
     </div>
+
+    // <div className='w-full flex flex-row bg-funk-pink relative items-center justify-between h-full overflow-hidden '>
+    // div className='flex flex-row'>
+    //
+    //
+    // </div>
+
+    // <Link
+    //   href={`?main_menu=open`}
+    //   className='absolute h-24 w-24 group sm:h-14 sm:w-14 sm:bottom-10 sm:right-10 bottom-4 right-1/2 -mr-12 sm:mr-0'
+    // >
+    //   <BoltIcon className='h-full flex sm:hidden fill-funk-yellow' />
+    //   <ArrowRightCircleIcon className='h-full ease-in-out duration-150 group-hover:scale-110 hidden sm:flex fill-slate-100 group-hover:fill-white' />
+    // </Link>
+
+    // </div>
   )
 }
 
@@ -146,72 +153,5 @@ function MainMenu() {
       </Link>
     </nav>
     // </FadeOutWrapper>
-  )
-}
-
-function DanceMenu() {
-  return (
-    <nav
-      className={`w-full h-full absolute top-0 left-0 bg-white animate-slideRight`}
-    >
-      <ul className={`w-full h-full flex flex-col`}>
-        <Link
-          href={`#`}
-          className={`text-white opacity-40 cursor-default text-4xl w-full h-1/4 flex p-6 bg-funk-pink shrink-0 grow-0`}
-        >
-          <li className='h-full w-full justify-center flex flex-col'>
-            <h2 className='whitespace-nowrap'>BIG SHAPES</h2>
-            <p className='text-xl openSans'>
-              After school contemporary dance classes for 12-18 year old
-              students
-            </p>
-          </li>
-        </Link>
-        <Link
-          href={`#`}
-          className={`opacity-20 cursor-default text-4xl w-full h-1/4 flex p-6 bg-white shrink-0 grow-0`}
-        >
-          <li className='h-full w-full justify-center flex flex-col'>
-            <h2 className='whitespace-nowrap'>DOVES</h2>
-            <p className='text-xl openSans'>
-              After school contemporary dance classes for kids aged 8 - 12 yrs,
-              run by DCM
-            </p>
-          </li>
-        </Link>
-        <Link
-          href={`/dance/little-funkers`}
-          className={`group text-white relative text-4xl w-full h-1/4 flex flex-row items-center justify-between p-6 bg-funk-pink shrink-0 grow-0`}
-        >
-          <li className='h-full justify-center flex flex-col'>
-            <div className='flex flex-row items-center space-x-2'>
-              <BoltIcon className='h-28 w-28 hidden sm:flex fill-funk-lime' />
-              <div>
-                <h2 className='whitespace-nowrap'>LITTLE FUNKERS</h2>
-                <p className='text-xl openSans'>
-                  In-school therapeutic dance classes for kids aged 7 - 11 yrs
-                </p>
-              </div>
-            </div>
-          </li>
-          <ArrowRightCircleIcon className='sm:h-14 hidden sm:flex sm:w-14 h-10 w-10 ease-in-out duration-150 sm:group-hover:scale-110 sm:-translate-x-6 sm:group-hover:-translate-x-0 fill-white absolute right-6 bottom-4 sm:bottom-1/2 sm:-mb-7 mb-0' />
-        </Link>
-        <Link
-          href={`#`}
-          className={`text-4xl opacity-20 cursor-default w-full h-1/4 flex p-6 bg-white shrink-0 grow-0`}
-        >
-          <li className='h-full w-full justify-center flex flex-col'>
-            <h2 className=' whitespace-nowrap'>MOTHER FUNKERS</h2>
-            <p className='text-xl openSans'>
-              Wild dance classes for grown ups. Covering a range of styles and
-              finishing with flexibility and mindfulness
-            </p>
-          </li>
-        </Link>
-      </ul>
-      <Link href={`/`} className='absolute group h-20 top-6 right-6'>
-        <XMarkIcon className='fill-white h-10 w-10 group-hover:scale-110 ease-in-out duration-150' />
-      </Link>
-    </nav>
   )
 }
