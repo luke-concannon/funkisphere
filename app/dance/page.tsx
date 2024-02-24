@@ -1,111 +1,73 @@
 import Link from 'next/link'
-import { Bars3Icon } from '@heroicons/react/24/solid'
-import Image from 'next/image'
+import {
+  BoltIcon,
+  XMarkIcon,
+  ArrowRightCircleIcon,
+} from '@heroicons/react/24/solid'
 
-export default async function HomePage() {
+export default async function DancePage() {
   return (
-    <div className='w-full flex bg-funk-mango flex-col'>
-      <nav className='flex flex-row justify-end items-center w-full px-10 py-4'>
-        <button>
-          <Bars3Icon className='h-8 w-8 text-slate-900' />
-        </button>
-      </nav>
-      <div className='w-full flex flex-col space-y-10 px-20 pb-20 pt-10'>
-        <section className='flex flex-row space-x-10 w-full'>
-          <div className='w-2/3 flex flex-col'>
-            <h1 className='font-bungeeOutline text-7xl'>Little Funkers</h1>
-            <h2 className='font-bungee text-lg'>
-              Kids dance classes in Schools
-            </h2>
-            <p className='pt-2'>
-              Man-of-war capstan warp piracy mutiny belay lass. Broadside parrel
-              Sea Legs yard lateen sail Admiral of the Black interloper. Capstan
-              hearties scuppers lad crack Jennys tea cup Sink me jack. Nipper
-              salmagundi skysail loot square-rigged hornswaggle lanyard. Skysail
-              haul wind provost lass Corsair jack line. Yard rope&apos;s end
-              smartly Admiral of the Black Yellow Jack trysail fire in the hole.
-              Buccaneer Brethren of the Coast topsail Barbary Coast Yellow Jack
-              log nipperkin. Keel ho parrel Yellow Jack lateen sail wench line.
+    <nav
+      className={`w-full h-full absolute top-0 left-0 bg-white animate-slideRight`}
+    >
+      <ul className={`w-full h-full flex flex-col`}>
+        <Link
+          href={`#`}
+          className={`text-white opacity-40 cursor-default text-4xl w-full h-1/4 flex p-6 bg-funk-pink shrink-0 grow-0`}
+        >
+          <li className='h-full w-full justify-center flex flex-col'>
+            <h2 className='whitespace-nowrap'>BIG SHAPES</h2>
+            <p className='text-xl openSans'>
+              After school contemporary dance classes for 12-18 year old
+              students
             </p>
-          </div>
-          <div className='w-1/3 h-full bg-gray-200 rounded'></div>
-        </section>
-        <div className='w-full h-px bg-gray-200' />
-        <section className='w-full flex flex-row space-x-10 items-center'>
-          <div className='flex flex-col space-y-6 w-1/3'>
-            {/* <div className='rounded w-full h-52 bg-gray-200' /> */}
-            <Image
-              src='/images/tps-logo.png'
-              alt='Takaka Primary School'
-              width={500}
-              height={500}
-              className='object-contain'
-            />
-            <div className='space-y-2'>
-              {/* <h3 className='text-slate-900 text-2xl font-bungee'>
-                Takaka Primary School
-              </h3> */}
-              <p className='text-slate-900 font-openSans '>
-                Man-of-war capstan warp piracy mutiny belay lass. Broadside
-                parrel Sea Legs yard lateen sail Admiral of the Black
-                interloper. Capstan hearties scuppers lad crack Jennys tea cup
-                Sink me jack. Nipper salmagundi skysail loot square-rigged
-                hornswaggle lanyard. Skysail haul wind provost lass Corsair jack
-                line. Yard rope&apos;s end smartly Admiral of the Black Yellow
-                Jack trysail fire in the hole. Buccaneer Brethren of the Coast
-                topsail Barbary Coast Yellow Jack log nipperkin. Keel ho parrel
-                Yellow Jack lateen sail wench line.
-              </p>
+          </li>
+        </Link>
+        <Link
+          href={`#`}
+          className={`opacity-20 cursor-default text-4xl w-full h-1/4 flex p-6 bg-white shrink-0 grow-0`}
+        >
+          <li className='h-full w-full justify-center flex flex-col'>
+            <h2 className='whitespace-nowrap'>DOVES</h2>
+            <p className='text-xl openSans'>
+              After school contemporary dance classes for kids aged 8 - 12 yrs,
+              run by DCM
+            </p>
+          </li>
+        </Link>
+        <Link
+          href={`/dance/little-funkers`}
+          className={`group text-white relative text-4xl w-full h-1/4 flex flex-row items-center justify-between p-6 bg-funk-pink shrink-0 grow-0`}
+        >
+          <li className='h-full justify-center flex flex-col'>
+            <div className='flex flex-row items-center space-x-2'>
+              <BoltIcon className='h-28 w-28 hidden sm:flex fill-funk-lime' />
+              <div>
+                <h2 className='whitespace-nowrap'>LITTLE FUNKERS</h2>
+                <p className='text-xl openSans'>
+                  In-school therapeutic dance classes for kids aged 7 - 11 yrs
+                </p>
+              </div>
             </div>
-          </div>
-          <div className='flex flex-col space-y-6 w-1/3'>
-            {/* <div className='rounded h-52 w-full bg-gray-200' /> */}
-            <Image
-              src='/images/motupipi-school-logo.png'
-              alt='Motupipi School'
-              width={500}
-              height={500}
-              layout='responsive'
-              className='object-contain'
-            />
-            <div className='space-y-2 '>
-              {/* <h3 className='text-slate-900 text-2xl font-bungee'>
-                Motupipi School
-              </h3> */}
-              <p className='text-slate-900 font-openSans '>
-                Man-of-war capstan warp piracy mutiny belay lass. Broadside
-                parrel Sea Legs yard lateen sail Admiral of the Black
-                interloper. Capstan hearties scuppers lad crack Jennys tea cup
-                Sink me jack. Nipper salmagundi skysail loot square-rigged
-                hornswaggle lanyard. Skysail haul wind provost lass Corsair jack
-                line. Yard rope&apos;s end smartly Admiral of the Black Yellow
-                Jack trysail fire in the hole. Buccaneer Brethren of the Coast
-                topsail Barbary Coast Yellow Jack log nipperkin. Keel ho parrel
-                Yellow Jack lateen sail wench line.
-              </p>
-            </div>
-          </div>
-          <div className='flex flex-col space-y-6 w-1/3'>
-            <div className='rounded h-52 w-full bg-gray-200' />
-            <div className='space-y-2 '>
-              <h3 className='text-slate-900 text-2xl font-bungee'>
-                Takaka Central School
-              </h3>
-              <p className='text-slate-900 font-openSans '>
-                Man-of-war capstan warp piracy mutiny belay lass. Broadside
-                parrel Sea Legs yard lateen sail Admiral of the Black
-                interloper. Capstan hearties scuppers lad crack Jennys tea cup
-                Sink me jack. Nipper salmagundi skysail loot square-rigged
-                hornswaggle lanyard. Skysail haul wind provost lass Corsair jack
-                line. Yard rope&apos;s end smartly Admiral of the Black Yellow
-                Jack trysail fire in the hole. Buccaneer Brethren of the Coast
-                topsail Barbary Coast Yellow Jack log nipperkin. Keel ho parrel
-                Yellow Jack lateen sail wench line.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+          </li>
+          <ArrowRightCircleIcon className='sm:h-14 hidden sm:flex sm:w-14 h-10 w-10 ease-in-out duration-150 sm:group-hover:scale-110 sm:-translate-x-6 sm:group-hover:-translate-x-0 fill-white absolute right-6 bottom-4 sm:bottom-1/2 sm:-mb-7 mb-0' />
+        </Link>
+        <Link
+          href={`#`}
+          className={`text-4xl opacity-20 cursor-default w-full h-1/4 flex p-6 bg-white shrink-0 grow-0`}
+        >
+          <li className='h-full w-full justify-center flex flex-col'>
+            <h2 className=' whitespace-nowrap'>MOTHER FUNKERS</h2>
+            <p className='text-xl openSans'>
+              Wild dance classes for grown ups. Covering a range of styles and
+              finishing with flexibility and mindfulness
+            </p>
+          </li>
+        </Link>
+      </ul>
+      <Link href={`/`} className='absolute group h-20 top-6 right-6'>
+        <XMarkIcon className='fill-white h-10 w-10 group-hover:scale-110 ease-in-out duration-150' />
+      </Link>
+    </nav>
   )
 }
