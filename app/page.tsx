@@ -47,13 +47,13 @@ export default async function HomePage({
             />
           ))}
         </div>
-        <Image
+        {/* <Image
           src='/images/angel-of-funk.png'
           alt='The Funkisphere'
           width={500}
           height={800}
           className='absolute top-0 right-0 w-1/2 h-full object-cover'
-        />
+        /> */}
         <nav className='fixed top-0 left-0 w-full p-12 lg:top-auto lg:left-auto lg:bottom-0 lg:right-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
           <ul className='rotate-90 origin-center text-center lg:flex hidden flex-row space-x-10 text-white text-3xl '>
             <Link href={`/dance`}>
