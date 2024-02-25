@@ -17,6 +17,7 @@ module.exports = {
           darkPink: '#FB92FF',
           red: '#CA3800',
           yellow: '#ffff33',
+          purple: '#D103D1',
         },
       },
       fontFamily: {
