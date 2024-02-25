@@ -57,7 +57,7 @@ export default async function HomePage({
         <nav className='fixed top-0 left-0 w-full p-12 lg:top-auto lg:left-auto lg:bottom-0 lg:right-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
           <ul className='rotate-90 origin-center text-center lg:flex hidden flex-row space-x-10 text-white text-3xl '>
             <Link href={`/dance`}>
-              <li className=' font-bungee hover:text-funk-yellow ease-in-out duration-150'>
+              <li className='hover:translate-y-1 hover:scale-105 font-bungee hover:text-funk-yellow ease-in-out duration-150'>
                 DANCE
               </li>
             </Link>
