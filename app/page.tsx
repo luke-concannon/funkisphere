@@ -1,13 +1,5 @@
 import Link from 'next/link'
-import {
-  BoltIcon,
-  XMarkIcon,
-  ArrowRightCircleIcon,
-  ChevronDoubleUpIcon,
-  ChevronDoubleDownIcon,
-  EllipsisHorizontalIcon,
-} from '@heroicons/react/24/solid'
-import Image from 'next/image'
+import { XMarkIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/solid'
 import ParallaxBackground from './_components/ParallaxBackground'
 import { Logo } from './_components'
 
@@ -16,15 +8,18 @@ export default async function HomePage({
 }: {
   searchParams: { [key: string]: String }
 }) {
-  const { main_menu } = searchParams
+  const { main_menu, registration_dropdown } = searchParams
 
   return (
     <>
       <ParallaxBackground />
-      <Link href={`?main_menu=open`} className='fixed bottom-6 left-1/2 -ml-10'>
+      <Link
+        href={`?main_menu=open`}
+        className='fixed bottom-6 left-1/2 -ml-10 lg:hidden'
+      >
         <EllipsisHorizontalIcon className='h-20 w-20 fill-funk-yellow' />
       </Link>
-      <div className='flex flex-row space-x-4 items-center lg:justify-between fixed z-50 top-0 left-0 w-full px-6 py-10 lg:p-10'>
+      <div className='flex flex-row space-x-4 items-center lg:justify-between fixed z-50 top-0 left-0 w-full px-6 py-10 lg:px-10 lg:pt-10 lg:pb-0'>
         <div className='flex flex-row w-full lg:w-fit lg:space-x-4 items-center'>
           <div className='lg:w-24 lg:flex hidden'>
             <Logo />
@@ -39,63 +34,82 @@ export default async function HomePage({
           </div>
         </div>
         <nav className=' lg:flex lg:items-center lg:justify-center hidden'>
-          <ul className=' text-center flex flex-row space-x-8 text-slate-900 text-2xl '>
+          <ul className=' text-center flex flex-row space-x-8 text-slate-900  '>
             <Link href={`/dance`}>
-              <li className='hover:translate-y-1 hover:scale-105 font-bungee hover:text-funk-yellow ease-in-out duration-150'>
+              <li className='text-xl hover:translate-y-1 hover:scale-105 font-bungee hover:text-funk-yellow ease-in-out duration-150'>
                 DANCE
               </li>
             </Link>
-            <li className='font-bungee cursor-default ease-in-out duration-150'>
+            <li className=' text-xl font-bungee cursor-default ease-in-out duration-150'>
               YOGA
             </li>
-            <li className=' font-bungee cursor-default ease-in-out duration-150'>
+            <li className='text-xl font-bungee cursor-default ease-in-out duration-150'>
               VIDEOGRAPHY
+            </li>
+            <li className='group relative'>
+              <Link
+                href={
+                  !!registration_dropdown ? `/` : `?registration_dropdown=open`
+                }
+                className='px-4 py-2 font-bold bg-funk-lime rounded font-openSans group-active:shadow-none shadow-[5px_5px_0px_0px_rgba(109,40,217)] ease-in-out duration-150'
+              >
+                Registration
+              </Link>
+              {!!registration_dropdown && (
+                <>
+                  <Link
+                    href='/'
+                    className='fixed top-0 left-0 w-screen h-screen z-40'
+                  />
+                  <ul className='p-6 bg-funk-lime w-80 absolute rounded top-[130%] right-0  z-50 text-left font-bungee '>
+                    <li className='group/mother '>
+                      <Link href='/'>
+                        <h2 className='group-hover/mother:text-funk-pink ease-in-out duration-150'>
+                          Mother Funkers
+                        </h2>
+                        <p>Wild dance classes for grown-ups</p>
+                      </Link>
+                    </li>
+                    <div className='w-full h-px my-6 flex flex-row items-center shrink-0 justify-center'>
+                      <span className='w-11/12 h-full bg-funk-pink ' />
+                    </div>
+                    <li className=' group/shapes'>
+                      <Link href='/' className=''>
+                        <h2 className='group-hover/shapes:text-funk-pink ease-in-out duration-150'>
+                          Big Shapes
+                        </h2>
+                        <p>
+                          After school contemporary dance classes for teens 12 -
+                          18 yrs
+                        </p>
+                      </Link>
+                    </li>
+                    <div className='w-full h-px my-6 flex flex-row items-center shrink-0 justify-center'>
+                      <span className='w-11/12 h-full bg-funk-pink ' />
+                    </div>
+                    <li className=' group/funk'>
+                      <a
+                        target='_blank'
+                        href={`https://airtable.com/app28ABXN7BKl5b0o/pagnsoyfjPF7LTMvi/form`}
+                        className='group-hover/funk:bg-funk-pink ease-in-out duration-150 bg-opacity-20'
+                      >
+                        <h2 className='group-hover/funk:text-funk-pink ease-in-out duration-150'>
+                          Little Funkers
+                        </h2>
+
+                        <p>
+                          In-school therapeutic dance classes for kids 7 - 11
+                          yrs
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </>
+              )}
             </li>
           </ul>
         </nav>
       </div>
-
-      {/* <div className='w-full bg-funk-pink h-full items-center relative flex lg:flex-row overflow-hidden'>
-        <div className='flex lg:flex-row lg:justify-between lg:items-center lg:w-full lg:p-20 flex-col relative'>
-          <div className='fixed top-0 left-0 w-full p-12 lg:top-0 lg:left-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
-            <p className='text-white lg:-rotate-90 origin-center text-center lg:whitespace-nowrap font-bungee text-2xl sm:text-4xl lg:text-4xl 2xl:text-5xl'>
-              The Creative Mahi of Milo Haigh
-            </p>
-          </div> */}
-      {/* <div className='lg:h-[50vw] z-50 lg:min-h-[50vw] h-[100vw] flex-wrap flex flex-row relative aspect-square'>
-          <div className='absolute h-full w-full flex flex-col text-slate-900 text-[5rem] sm:text-[8rem] md:text-[11rem] lg:text-[7rem] xl:text-[9rem] 2xl:text-[11rem]'>
-            <div className='h-1/3  flex items-center flex-row justify-end w-full'>
-              <div className='h-full relative flex items-center w-[85%]'>
-                <p className='w-full '>THE</p>
-              </div>
-            </div>
-            <div className='h-1/3 flex items-center flex-row justify-end w-full'>
-              <div className='h-full relative flex items-center w-[85%]'>
-                <p className='w-full'>FUNKIS</p>
-              </div>
-            </div>
-            <div className='h-1/3 flex items-center flex-row justify-end w-full'>
-              <div className='h-full flex items-center w-[85%]'>
-                <p className='w-full'>PHERE</p>
-              </div>
-            </div>
-          </div>
-
-          {Array.from({ length: 9 }).map((_, index) => (
-            <div
-              key={index}
-              className='rounded-full hover:bg-funk-mango bg-funk-lime h-1/3 w-1/3'
-            />
-          ))}
-        </div> */}
-      {/* <Image
-          src='/images/angel-of-funk.png'
-          alt='The Funkisphere'
-          width={500}
-          height={800}
-          className='absolute top-0 right-0 w-1/2 h-full object-cover'
-        /> */}
-
       {main_menu && <MainMenu />}
     </>
   )
