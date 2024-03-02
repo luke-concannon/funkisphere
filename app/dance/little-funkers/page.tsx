@@ -10,10 +10,10 @@ export default async function HomePage() {
           <div className='w-24 absolute left-6 top-6'>
             <Logo />
           </div>
-          <div className='flex text-[1.1rem] pl-2 space-y-1.5 flex-col absolute left-7 top-[26px] font-bungee'>
-            <h1 className=''>THE</h1>
-            <h1 className=''>FUNKIS</h1>
-            <h1 className=''>PHERE</h1>
+          <div className='flex text-[1.2rem] pl-2 space-y-1 flex-col absolute left-7 top-[24px] '>
+            <h1 className='font-openSans'>THE</h1>
+            <h1 className='font-openSans'>FUNKIS</h1>
+            <h1 className='font-openSans'>PHERE</h1>
           </div>
         </Link>
 
