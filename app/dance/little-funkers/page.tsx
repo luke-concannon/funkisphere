@@ -22,29 +22,23 @@ export default async function HomePage() {
         </div>
       </nav>
       <div className='flex flex-col relative'>
-        <div className='flex flex-col px-6 space-y-4'>
-          <ul className='p-6 bg-funk-pink list-disc list-inside rounded-xl font-openSans relative font-bold text-white text-base '>
-            <li>Juniors 5-7yrs, Seniors 8-11yrs</li>
-            <li className='mt-2'>Term Fees, $10 per week</li>
-            <li className='mt-2'>TPS, Motupipi & Central</li>
-
-            <li className='w-full flex flex-row items-center justify-end'>
-              <span className='flex mt-4 flex-row w-fit space-x-1 items-center justify-center font-bold bg-funk-yellow px-4 py-2 rounded-lg '>
-                <Link href='/dance/registration' className=''>
-                  <p className=' text-black text-sm'>Register for Term 1</p>
-                </Link>
-                <ChevronRightIcon className='h-6 w-6 fill-slate-900' />
-              </span>
-            </li>
-          </ul>
+        <div className='px-10 pb-14 flex flex-col items-end'>
+          <p className='mb-8 text-slate-900 text-xl leading-relaxed'>
+            Little Funkers in-school therapeutic dance classes focus on building
+            expression, confidence, connection and well being. The program aims
+            to increase access, awareness and equity for tamariki attending
+            professional dance classes. Weekly Juniors (5-7yrs) and Seniors
+            (8-11yrs) classes are run at TPS, Motupipi and Central Schools.
+          </p>
+          <a
+            target='_blank'
+            href={`https://airtable.com/app28ABXN7BKl5b0o/pagnsoyfjPF7LTMvi/form`}
+            className='px-4 shadow-[5px_5px_0px_0px_rgba(109,40,217)] text-white flex flex-row py-2 items-center space-x-1 font-bold bg-funk-pink rounded w-fit text-center font-openSans'
+          >
+            <p>Register for Term 1</p>
+            <ChevronRightIcon className='h-4 w-4 fill-white' />
+          </a>
         </div>
-
-        <p className='px-10 py-14 text-slate-900 text-xl leading-relaxed'>
-          Little Funkers in-school therapeutic dance classes focus on building
-          expression, confidence, connection and well being. The program aims to
-          increase access, awareness and equity for tamariki attending
-          professional dance classes. The classes cover a range of styles.
-        </p>
         <div className='w-full h-px flex flex-row items-center justify-center'>
           <span className='w-3/4 h-full bg-funk-pink ' />
         </div>
