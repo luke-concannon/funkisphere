@@ -5,6 +5,8 @@ import {
   ArrowRightCircleIcon,
 } from '@heroicons/react/24/solid'
 import Image from 'next/image'
+import ParallaxBackground from './_components/ParallaxBackground'
+import { Logo } from './_components'
 
 export default async function HomePage({
   searchParams,
@@ -14,14 +16,50 @@ export default async function HomePage({
   const { main_menu } = searchParams
 
   return (
-    <div className='w-full bg-funk-pink h-full items-center relative flex lg:flex-row overflow-hidden'>
-      <div className='flex lg:flex-row lg:justify-between lg:items-center lg:w-full lg:p-20 flex-col relative'>
-        <div className='fixed top-0 left-0 w-full p-12 lg:top-0 lg:left-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
-          <p className='text-white lg:-rotate-90 origin-center text-center lg:whitespace-nowrap font-bungee text-2xl sm:text-4xl lg:text-4xl 2xl:text-5xl'>
-            The Creative Mahi of Milo Haigh
-          </p>
+    <>
+      <ParallaxBackground />
+      <div className=' fixed bottom-10 block lg:hidden w-14'>
+        <Logo />
+      </div>
+      <div className='flex flex-row space-x-4 items-center lg:justify-between fixed z-50 top-0 left-0 w-full px-6 py-10 lg:p-10'>
+        <div className='flex flex-row w-full lg:w-fit lg:space-x-4 items-center'>
+          <div className='lg:w-24 w-14 lg:flex hidden '>
+            <Logo />
+          </div>
+          <div className='flex flex-col justify-center lg:justify-start text-center w-full items-center lg:items-start lg:text-left'>
+            <h1 className='font-openSans w-full text-4xl lg:text-7xl text-white whitespace-nowrap'>
+              THE FUNKISPHERE
+            </h1>
+            <h2 className='lg:text-xl text-base text-slate-900 whitespace-nowrap'>
+              THE CREATIVE MAHI OF MILO HAIGH
+            </h2>
+          </div>
         </div>
-        <div className='lg:h-[50vw] z-50 lg:min-h-[50vw] h-[100vw] flex-wrap flex flex-row relative aspect-square'>
+        <nav className=' lg:flex lg:items-center lg:justify-center hidden'>
+          <ul className=' text-center flex flex-row space-x-8 text-slate-900 text-2xl '>
+            <Link href={`/dance`}>
+              <li className='hover:translate-y-1 hover:scale-105 font-bungee hover:text-funk-yellow ease-in-out duration-150'>
+                DANCE
+              </li>
+            </Link>
+            <li className='font-bungee cursor-default ease-in-out duration-150'>
+              YOGA
+            </li>
+            <li className=' font-bungee cursor-default ease-in-out duration-150'>
+              VIDEOGRAPHY
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      {/* <div className='w-full bg-funk-pink h-full items-center relative flex lg:flex-row overflow-hidden'>
+        <div className='flex lg:flex-row lg:justify-between lg:items-center lg:w-full lg:p-20 flex-col relative'>
+          <div className='fixed top-0 left-0 w-full p-12 lg:top-0 lg:left-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
+            <p className='text-white lg:-rotate-90 origin-center text-center lg:whitespace-nowrap font-bungee text-2xl sm:text-4xl lg:text-4xl 2xl:text-5xl'>
+              The Creative Mahi of Milo Haigh
+            </p>
+          </div> */}
+      {/* <div className='lg:h-[50vw] z-50 lg:min-h-[50vw] h-[100vw] flex-wrap flex flex-row relative aspect-square'>
           <div className='absolute h-full w-full flex flex-col text-slate-900 text-[5rem] sm:text-[8rem] md:text-[11rem] lg:text-[7rem] xl:text-[9rem] 2xl:text-[11rem]'>
             <div className='h-1/3  flex items-center flex-row justify-end w-full'>
               <div className='h-full relative flex items-center w-[85%]'>
@@ -46,49 +84,17 @@ export default async function HomePage({
               className='rounded-full hover:bg-funk-mango bg-funk-lime h-1/3 w-1/3'
             />
           ))}
-        </div>
-        {/* <Image
+        </div> */}
+      {/* <Image
           src='/images/angel-of-funk.png'
           alt='The Funkisphere'
           width={500}
           height={800}
           className='absolute top-0 right-0 w-1/2 h-full object-cover'
         /> */}
-        <nav className='fixed top-0 left-0 w-full p-12 lg:top-auto lg:left-auto lg:bottom-0 lg:right-0 lg:w-20 lg:h-full lg:flex lg:items-center lg:justify-center'>
-          <ul className='rotate-90 origin-center text-center lg:flex hidden flex-row space-x-10 text-white text-3xl '>
-            <Link href={`/dance`}>
-              <li className='hover:translate-y-1 hover:scale-105 font-bungee hover:text-funk-yellow ease-in-out duration-150'>
-                DANCE
-              </li>
-            </Link>
-            <li className='font-bungee cursor-default ease-in-out duration-150'>
-              YOGA
-            </li>
-            <li className=' font-bungee cursor-default ease-in-out duration-150'>
-              VIDEOGRAPHY
-            </li>
-          </ul>
-        </nav>
-      </div>
 
       {main_menu && <MainMenu />}
-    </div>
-
-    // <div className='w-full flex flex-row bg-funk-pink relative items-center justify-between h-full overflow-hidden '>
-    // div className='flex flex-row'>
-    //
-    //
-    // </div>
-
-    // <Link
-    //   href={`?main_menu=open`}
-    //   className='absolute h-24 w-24 group sm:h-14 sm:w-14 sm:bottom-10 sm:right-10 bottom-4 right-1/2 -mr-12 sm:mr-0'
-    // >
-    //   <BoltIcon className='h-full flex sm:hidden fill-funk-yellow' />
-    //   <ArrowRightCircleIcon className='h-full ease-in-out duration-150 group-hover:scale-110 hidden sm:flex fill-slate-100 group-hover:fill-white' />
-    // </Link>
-
-    // </div>
+    </>
   )
 }
 
