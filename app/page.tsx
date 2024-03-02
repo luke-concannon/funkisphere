@@ -3,6 +3,9 @@ import {
   BoltIcon,
   XMarkIcon,
   ArrowRightCircleIcon,
+  ChevronDoubleUpIcon,
+  ChevronDoubleDownIcon,
+  EllipsisHorizontalIcon,
 } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import ParallaxBackground from './_components/ParallaxBackground'
@@ -18,20 +21,20 @@ export default async function HomePage({
   return (
     <>
       <ParallaxBackground />
-      <div className=' fixed bottom-10 block lg:hidden w-14'>
-        <Logo />
-      </div>
+      <Link href={`?main_menu=open`} className='fixed bottom-6 left-1/2 -ml-10'>
+        <EllipsisHorizontalIcon className='h-20 w-20 fill-funk-yellow' />
+      </Link>
       <div className='flex flex-row space-x-4 items-center lg:justify-between fixed z-50 top-0 left-0 w-full px-6 py-10 lg:p-10'>
         <div className='flex flex-row w-full lg:w-fit lg:space-x-4 items-center'>
-          <div className='lg:w-24 w-14 lg:flex hidden '>
+          <div className='lg:w-24 lg:flex hidden'>
             <Logo />
           </div>
           <div className='flex flex-col justify-center lg:justify-start text-center w-full items-center lg:items-start lg:text-left'>
-            <h1 className='font-openSans w-full text-4xl lg:text-7xl text-white whitespace-nowrap'>
+            <h1 className='font-bungee w-full text-3xl lg:text-4xl text-white whitespace-nowrap'>
               THE FUNKISPHERE
             </h1>
-            <h2 className='lg:text-xl text-base text-slate-900 whitespace-nowrap'>
-              THE CREATIVE MAHI OF MILO HAIGH
+            <h2 className='font-openSans lg:text-2xl text-xl text-slate-900 whitespace-nowrap'>
+              The Creative Mahi of Milo Haigh
             </h2>
           </div>
         </div>
@@ -100,13 +103,12 @@ export default async function HomePage({
 
 function MainMenu() {
   return (
-    // <FadeOutWrapper>
     <nav
-      className={`w-full h-full absolute top-0 left-0 bg-white animate-slideRight`}
+      className={`w-full h-full absolute top-0 left-0 bg-white animate-fadeInFromSmall z-50`}
     >
       <ul className={`w-full h-full flex flex-col items-center`}>
         <Link
-          href={`?main_menu=open&menu_open=dance`}
+          href={`/dance`}
           className={`w-full h-1/3 sm:hover:bg-opacity-100 group ease-in-out duration-150 sm:bg-opacity-90 bg-funk-pink`}
         >
           <li
@@ -158,6 +160,5 @@ function MainMenu() {
         <XMarkIcon className='fill-white h-10 w-10 group-hover:scale-110 ease-in-out duration-150' />
       </Link>
     </nav>
-    // </FadeOutWrapper>
   )
 }
