@@ -26,6 +26,7 @@ export default function ParallaxBackground() {
           className='absolute right-0 lg:right-auto lg:-bottom-1/4 top-1/3 lg:top-auto '
         >
           <Image
+            priority
             height={1080}
             width={1260}
             src='/images/pingers.png'
@@ -40,6 +41,7 @@ export default function ParallaxBackground() {
           className='flex w-full h-full flex-row items-center justify-center'
         >
           <Image
+            priority
             height={1200}
             width={800}
             src='/images/angel-of-funk.png'

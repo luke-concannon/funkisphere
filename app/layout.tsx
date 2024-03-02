@@ -46,8 +46,10 @@ export default function RootLayout({
       lang='en'
       className={`${openSans.variable} ${bungee.variable} ${bungeeOutline.variable}`}
     >
-      <body className='w-full'>
-        <main className='h-screen flex flex-col items-center'>{children}</main>
+      <body className='w-screen'>
+        <main className='h-screen w-full flex flex-col items-center '>
+          {children}
+        </main>
       </body>
     </html>
   )
