@@ -151,7 +151,7 @@ function MobileNavMenu() {
 
 function MobileRegistrationMenu() {
   return (
-    <div className='animate-fadeInFromSmall fixed top-0 left-0 w-screen h-screen  bg-funk-pink bg-opacity-80 backdrop-blur-sm'>
+    <div className='animate-fadeInFromSmall fixed top-0 left-0 w-screen h-[100dvh] bg-funk-pink bg-opacity-80 backdrop-blur-sm'>
       <Link href={`/`} className='absolute group h-20 top-6 right-6'>
         <XMarkIcon className='fill-white opacity-50 h-10 w-10 group-hover:scale-110 ease-in-out duration-150' />
       </Link>
@@ -223,7 +223,7 @@ function MobileRegistrationMenu() {
 function DesktopRegistrationDropdown() {
   return (
     <>
-      <Link href='/' className='fixed top-0 left-0 w-screen h-screen z-40' />
+      <Link href='/' className='fixed top-0 left-0 w-screen h-[100dvh] z-40' />
       <ul className='py-10 px-14 bg-funk-pink border-4 border-funk-lime w-[500px] bg-opacity-80 backdrop-blur absolute rounded top-[130%] right-0  z-50 text-center font-bungee '>
         <li className='group/mother '>
           <a
