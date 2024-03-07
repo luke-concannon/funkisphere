@@ -23,7 +23,7 @@ export default function ParallaxBackground() {
             transform: 'scale(1.3)',
             backgroundSize: 'auto',
           }}
-          className='absolute right-0 lg:right-auto lg:-bottom-1/4 top-1/3 lg:top-auto '
+          className='absolute right-0 lg:right-auto lg:-bottom-1/4 top-1/3 lg:top-auto'
         >
           <Image
             priority
