@@ -11,7 +11,7 @@ export default async function DancePage() {
       className={`w-full h-full flex flex-col animate-fadeInFromSmall max-w-7xl`}
     >
       <Link
-        href={`/`}
+        href={{ pathname: `/`, query: { close_modal: 'true' } }}
         className='w-full group h-12 flex flex-row items-center justify-end px-4 pt-6'
       >
         <XMarkIcon className='fill-slate-500 shrink-0 h-8 w-8 group-hover:scale-110 ease-in-out duration-150' />

@@ -7,7 +7,10 @@ export default async function HomePage() {
     <div className='w-full bg-white flex flex-col relative justify-between items-center h-full'>
       <div className='max-w-7xl relative'>
         <nav className='w-full h-32 flex flex-row justify-between items-center px-10'>
-          <Link className='flex relative' href='/'>
+          <Link
+            className='flex relative'
+            href={{ pathname: `/`, query: { close_modal: 'true' } }}
+          >
             <div className='w-24'>
               <Logo />
             </div>
