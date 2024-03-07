@@ -9,6 +9,7 @@ import {
   NavBtnMobile,
   RegistrationMenuDesktop,
 } from './_components'
+import { Suspense } from 'react'
 
 export default async function HomePage({
   searchParams,
@@ -32,7 +33,9 @@ export default async function HomePage({
               The Creative Mahi of Milo Haigh
             </h2>
             <RegistrationBtnMobile />
-            <MobileRegistrationMenu />
+            <Suspense>
+              <MobileRegistrationMenu />
+            </Suspense>
           </div>
         </div>
         <nav className='lg:flex lg:items-center lg:justify-center hidden'>
@@ -56,7 +59,9 @@ export default async function HomePage({
           </ul>
         </nav>
       </div>
-      <MobileNavMenu />
+      <Suspense>
+        <MobileNavMenu />
+      </Suspense>
     </>
   )
 }
