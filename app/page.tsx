@@ -24,7 +24,7 @@ export default async function HomePage({
     <>
       <ParallaxBackground />
       <Link href={'?mobile_nav_menu=true'} className='lg:hidden'>
-        <BoltIcon className='h-10 w-10 fill-funk-pink bg-funk-yellow bottom-10 left-1/2 -ml-5 absolute p-1 rounded-full' />
+        <BoltIcon className='h-10 w-10 z-50 fill-funk-pink bg-funk-yellow bottom-10 left-1/2 -ml-5 absolute p-1 rounded-full' />
       </Link>
       <div className='flex flex-row space-x-4 items-center lg:justify-between fixed z-50 top-0 left-0 w-full px-6 py-10 lg:px-10 lg:pt-10 lg:pb-0'>
         <div className='flex flex-row w-full lg:w-fit lg:space-x-4 items-center'>
