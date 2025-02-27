@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { XMarkIcon, BoltIcon } from '@heroicons/react/24/solid'
+import { XMarkIcon, BoltIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import ParallaxBackground from './_components/ParallaxBackground'
 import { Logo } from './_components'
 import {
@@ -19,27 +19,37 @@ export default async function HomePage({
   return (
     <>
       <ParallaxBackground />
-      <NavBtnMobile />
-      <div className='flex flex-row space-x-4 items-center lg:justify-between fixed z-40 top-0 left-0 w-full px-6 py-10 lg:px-10 lg:pt-10 lg:pb-0'>
+      {/* <NavBtnMobile /> */}
+      <div className='flex flex-row space-x-4 items-start lg:justify-between fixed z-40 top-0 left-0 w-full px-6 py-10 lg:px-10 lg:pt-10 lg:pb-0'>
         <div className='flex flex-row w-full lg:w-fit lg:space-x-4 items-center'>
-          <div className='lg:w-24 lg:flex hidden'>
+          <div className='lg:w-32 lg:flex hidden'>
             <Logo />
           </div>
           <div className='flex flex-col justify-center lg:justify-start text-center w-full relative items-center lg:items-start lg:text-left'>
-            <h1 className='font-bungee w-full text-3xl lg:text-4xl text-white whitespace-nowrap'>
+            <h1 className='font-bungee w-full text-2xl lg:text-4xl text-white whitespace-nowrap'>
               THE FUNKISPHERE
             </h1>
             <h2 className='font-openSans lg:text-2xl text-xl text-slate-900 whitespace-nowrap'>
               The Creative Mahi of Milo Haigh
             </h2>
-            <RegistrationBtnMobile />
+
+            <Link
+              href='mailto:funkisphere@gmail.com'
+              className='inline-flex lg:relative lg:mt-1 fixed bottom-6 lg:bottom-0 group gap-2 items-center'
+            >
+              <EnvelopeIcon className='w-6 h-6 text-white group-hover:scale-110 transition-all' />
+              <p className='text-base lg:text:lg font-bold text-funk-lime group-hover:text-funk-green transition-all'>
+                funkisphere@gmail.com
+              </p>
+            </Link>
+            {/* <RegistrationBtnMobile />
             <Suspense>
               <MobileRegistrationMenu />
-            </Suspense>
+            </Suspense> */}
           </div>
         </div>
         <nav className='lg:flex lg:items-center lg:justify-center hidden'>
-          <ul className='items-center text-center flex flex-row space-x-8 text-slate-900  '>
+          {/* <ul className='items-center text-center flex flex-row space-x-8 text-slate-900  '>
             <Link href={`/dance`}>
               <li className='text-xl hover:translate-y-1 hover:scale-105 font-bungee hover:text-funk-yellow ease-in-out duration-150'>
                 DANCE
@@ -56,12 +66,12 @@ export default async function HomePage({
                 <RegistrationMenuDesktop />
               </RegistrationBtnDesktop>
             </li>
-          </ul>
+          </ul> */}
         </nav>
       </div>
-      <Suspense>
+      {/* <Suspense>
         <MobileNavMenu />
-      </Suspense>
+      </Suspense> */}
     </>
   )
 }
