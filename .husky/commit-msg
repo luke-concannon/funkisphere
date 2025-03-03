@@ -1,0 +1,21 @@
+pnpm commitlint --edit $1 || {
+  echo "\n❌ Invalid commit message format!\n"
+  echo "Proper format: <type>: <description>"
+  echo "\nTypes:"
+  echo "feat:     ✨ A new feature"
+  echo "fix:      🐛 A bug fix"
+  echo "docs:     📚 Documentation"
+  echo "style:    💅 Formatting"
+  echo "refactor: ♻️  Code restructuring"
+  echo "perf:     ⚡️ Performance"
+  echo "test:     🧪 Tests"
+  echo "chore:    🔧 Maintenance"
+  echo "revert:   ⏪️ Revert changes"
+  echo "ci:       👷 CI changes"
+  echo "build:    📦 Build changes"
+  echo "\nExample commits:"
+  echo "feat: add user authentication"
+  echo "fix: resolve memory leak in dashboard"
+  echo "docs: update API documentation\n"
+  exit 1
+}

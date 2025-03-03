@@ -1,0 +1,7 @@
+{
+  "**/*": [
+    "bash -c 'tsc --noEmit'",
+    "prettier --write --ignore-unknown",
+    "eslint --fix ."
+  ]
+}
