@@ -12,7 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true, // this is required for Sheriff to perform correctly.
     "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly.
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true,
     "plugins": [
       {

@@ -1,6 +1,7 @@
 import type { ReactElement } from "react"
 import Link from "next/link"
-import { ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/solid"
+
+// import { ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/solid"
 
 export default function DancePage(): ReactElement {
   return (
@@ -11,7 +12,7 @@ export default function DancePage(): ReactElement {
         className="group flex h-12 w-full flex-row items-center justify-end px-4 pt-6"
         href={{ pathname: `/`, query: { close_modal: "true" } }}
       >
-        <XMarkIcon className="h-8 w-8 shrink-0 fill-slate-500 duration-150 ease-in-out group-hover:scale-110" />
+        {/* <XMarkIcon className="h-8 w-8 shrink-0 fill-slate-500 duration-150 ease-in-out group-hover:scale-110" /> */}
       </Link>
       <ul className={`flex h-full w-full flex-col px-10`}>
         <Link
@@ -26,7 +27,7 @@ export default function DancePage(): ReactElement {
               After school contemporary dance classes for teens 12 - 18 yrs
             </p>
           </li>
-          <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" />
+          {/* <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" /> */}
         </Link>
         <div className="my-1 flex h-px w-full shrink-0 flex-row items-center justify-center">
           <span className="bg-funk-pink h-full w-11/12" />
@@ -41,7 +42,7 @@ export default function DancePage(): ReactElement {
               After school contemporary dance classes for kids 8 - 12 yrs
             </p>
           </li>
-          <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" />
+          {/* <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" /> */}
         </Link>
         <div className="my-1 flex h-px w-full shrink-0 flex-row items-center justify-center">
           <span className="bg-funk-pink h-full w-11/12" />
@@ -58,7 +59,7 @@ export default function DancePage(): ReactElement {
               In-school therapeutic dance classes for kids 7 - 11 yrs
             </p>
           </li>
-          <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" />
+          {/* <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" /> */}
         </Link>
         <div className="my-1 flex h-px w-full shrink-0 flex-row items-center justify-center">
           <span className="bg-funk-pink h-full w-11/12" />
@@ -75,7 +76,7 @@ export default function DancePage(): ReactElement {
               Wild dance classes for grown ups.
             </p>
           </li>
-          <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" />
+          {/* <ChevronRightIcon className="fill-funk-pink flex h-10 w-10 shrink-0" /> */}
         </Link>
       </ul>
       <footer className="h-12 w-full" />

@@ -1,8 +1,9 @@
 import type { ReactElement } from "react"
 import Link from "next/link"
-import { BoltIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 
-import { Logo } from "@/app/_components/Logo"
+// import { BoltIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
+
+// import { Logo } from "@/app/_components/Logo"
 
 export default function HomePage(): ReactElement {
   return (
@@ -13,9 +14,7 @@ export default function HomePage(): ReactElement {
             className="relative flex"
             href={{ pathname: `/`, query: { close_modal: "true" } }}
           >
-            <div className="w-24">
-              <Logo />
-            </div>
+            <div className="w-24">{/* <Logo /> */}</div>
             <div className="absolute top-0 left-2 flex flex-col space-y-1 text-[1.2rem]">
               <h1 className="font-openSans font-bold">THE</h1>
               <h1 className="font-openSans font-bold">FUNKIS</h1>
@@ -44,7 +43,7 @@ export default function HomePage(): ReactElement {
               target="_blank"
             >
               <p className="whitespace-nowrap">Register for Term 1</p>
-              <ChevronRightIcon className="h-4 w-4 fill-white" />
+              {/* <ChevronRightIcon className="h-4 w-4 fill-white" /> */}
             </a>
           </div>
 
@@ -98,7 +97,7 @@ export default function HomePage(): ReactElement {
 
       <footer className="bg-funk-yellow border-funk-pink flex w-full flex-row items-center justify-center space-x-2 border-t-4 px-10 py-6">
         <Link className="flex flex-row items-center space-x-2" href="/">
-          <BoltIcon className="fill-funk-pink border-funk-yellow stroke-funk-pink h-12 w-12 shrink-0 border-2" />
+          {/* <BoltIcon className="fill-funk-pink border-funk-yellow stroke-funk-pink h-12 w-12 shrink-0 border-2" /> */}
           <div className="flex flex-col justify-center">
             <h1 className="text-funk-pink text-2xl whitespace-nowrap">
               THE FUNKISPHERE
