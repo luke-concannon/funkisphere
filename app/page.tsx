@@ -5,5 +5,5 @@ export default function HomePage({
 }: {
   searchParams: Promise<{ [key: string]: string }>
 }): ReactElement {
-  return <main>check one three</main>
+  return <main>Weeee one three</main>
 }
