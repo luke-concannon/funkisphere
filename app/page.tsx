@@ -5,11 +5,11 @@ import { Logo } from './_components'
 import {
   ModalWrapper,
   RegistrationBtnMobile,
-  RegistrationBtnDesktop,
   NavBtnMobile,
   RegistrationMenuDesktop,
 } from './_components'
 import { Suspense } from 'react'
+import { SparklesIcon } from '@heroicons/react/24/solid'
 
 export default async function HomePage({
   searchParams,
@@ -35,22 +35,21 @@ export default async function HomePage({
 
             <Link
               href='mailto:funkisphere@gmail.com'
-              className='inline-flex lg:relative lg:mt-1 fixed bottom-6 lg:bottom-0 group gap-2 items-center'
+              className='inline-flex  lg:relative lg:mt-1 fixed bottom-6 lg:bottom-0 group gap-2 items-center'
             >
               <EnvelopeIcon className='w-6 h-6 text-white group-hover:scale-110 transition-all' />
               <p className='text-base lg:text:lg font-bold text-funk-lime group-hover:text-funk-green transition-all'>
                 funkisphere@gmail.com
               </p>
             </Link>
-            {/* <RegistrationBtnMobile />
-            <Suspense>
-              <MobileRegistrationMenu />
-            </Suspense> */}
+            <div className='lg:hidden mt-4'>
+              <RegistrationButton />
+            </div>
           </div>
         </div>
         <nav className='lg:flex lg:items-center lg:justify-center hidden'>
-          {/* <ul className='items-center text-center flex flex-row space-x-8 text-slate-900  '>
-            <Link href={`/dance`}>
+          <ul className='items-center text-center flex flex-row space-x-8 text-slate-900  '>
+            {/* <Link href={`/dance`}>
               <li className='text-xl hover:translate-y-1 hover:scale-105 font-bungee hover:text-funk-yellow ease-in-out duration-150'>
                 DANCE
               </li>
@@ -60,19 +59,29 @@ export default async function HomePage({
             </li>
             <li className='text-xl font-bungee cursor-default ease-in-out duration-150'>
               VIDEOGRAPHY
-            </li>
+            </li> */}
             <li className='group relative'>
-              <RegistrationBtnDesktop>
-                <RegistrationMenuDesktop />
-              </RegistrationBtnDesktop>
+              <RegistrationButton />
             </li>
-          </ul> */}
+          </ul>
         </nav>
       </div>
       {/* <Suspense>
         <MobileNavMenu />
       </Suspense> */}
     </>
+  )
+}
+
+const RegistrationButton = () => {
+  return (
+    <Link
+      href={'https://airtable.com/app28ABXN7BKl5b0o/pagOFpWhnoHNSGyNu/form'}
+      className='px-4 flex flex-row border-4 border-funk-lime items-center space-x-1 py-2 font-bold bg-funk-pink bg-opacity-50 backdrop-blur-sm text-slate-900 rounded font-openSans group-active:shadow-none ease-in-out duration-150 z-540'
+    >
+      <SparklesIcon className='h-6 w-6 group-hover:scale-105 ease-in-out duration-150 fill-white' />
+      <p className='font-bungee text-white'>Registration</p>
+    </Link>
   )
 }
 

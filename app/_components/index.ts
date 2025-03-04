@@ -1,6 +1,5 @@
 export { Logo } from './Logo'
 export { ModalWrapper } from './ModalWrapper'
 export { RegistrationBtnMobile } from './RegistrationBtnMobile'
-export { RegistrationBtnDesktop } from './RegistrationBtnDesktop'
 export { RegistrationMenuDesktop } from './RegistrationMenuDesktop'
 export { NavBtnMobile } from './NavBtnMobile'
