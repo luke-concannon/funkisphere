@@ -31,7 +31,7 @@
     "postcss.config.mjs",
     ".next/types/**/*.ts",
     "eslint.config.ts",
-    "app/SquiggleWorm.tsx"
+    "app/_components/SquiggleWorm.tsx"
   ],
   "exclude": ["node_modules"]
 }

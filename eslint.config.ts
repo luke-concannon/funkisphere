@@ -59,6 +59,42 @@ const config = tseslint.config(
     rules: {
       "sonarjs/prefer-read-only-props": 0,
       "react-refresh/only-export-components": 0,
+      "unicorn/prevent-abbreviations": [
+        1,
+        {
+          allowList: {
+            props: true,
+            params: true,
+            Params: true,
+            ref: true,
+            Ref: true,
+          },
+        },
+      ],
+      "unicorn/switch-case-braces": [1, "avoid"],
+    },
+  },
+  {
+    files: ["**/*.jsx", "**/*.tsx"],
+    ignores: ["**/page.tsx", "**/layout.tsx", "**/icon.tsx"],
+    rules: {
+      "unicorn/filename-case": [
+        1,
+        {
+          case: "pascalCase",
+        },
+      ],
+    },
+  },
+  {
+    files: ["*.ts", "*.js"],
+    rules: {
+      "unicorn/filename-case": [
+        1,
+        {
+          case: "kebabCase",
+        },
+      ],
     },
   },
   {

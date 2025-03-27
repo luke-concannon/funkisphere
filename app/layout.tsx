@@ -3,7 +3,7 @@ import "../styles/globals.css"
 import type { ReactElement } from "react"
 import { Bungee, Bungee_Outline, Open_Sans } from "next/font/google"
 
-import { SquiggleWorm } from "./SquiggleWorm"
+import { SquiggleWorm } from "./_components/SquiggleWorm"
 
 const openSans = Open_Sans({
   display: "swap",
@@ -47,11 +47,12 @@ export default function RootLayout({
       lang="en"
     >
       <body className="w-screen bg-white">
-        <SquiggleWorm />
+        <SquiggleWorm colour="lime" />
+        <SquiggleWorm colour="salmon" />
         <SquiggleWorm />
 
         <div className="bg-foreground">
-          <SquiggleWorm />
+          <SquiggleWorm colour="salmon" />
         </div>
 
         {children}
