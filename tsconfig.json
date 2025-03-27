@@ -1,19 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2022",
+    "lib": ["es2022", "DOM", "DOM.Iterable"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true, // this is required for Sheriff to perform correctly.
+    "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
-    "isolatedModules": true, // this is required for Sheriff to perform correctly.
-    "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly.
+    "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "incremental": false,
     "plugins": [
       {
         "name": "next"
@@ -28,7 +29,9 @@
     "**/*.ts",
     "**/*.tsx",
     "postcss.config.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "eslint.config.ts",
+    "app/SquiggleWorm.tsx"
   ],
   "exclude": ["node_modules"]
 }

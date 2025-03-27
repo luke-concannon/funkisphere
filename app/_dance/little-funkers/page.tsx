@@ -38,7 +38,7 @@ export default function HomePage(): ReactElement {
             </p>
             <a
               className="border-funk-lime bg-funk-pink font-openSans flex w-fit flex-row items-center space-x-1 rounded border-4 px-4 py-2 text-center font-bold text-white duration-150 ease-in-out hover:scale-95"
-              href={`https://airtable.com/app28ABXN7BKl5b0o/pagnsoyfjPF7LTMvi/form`}
+              href="https://airtable.com/app28ABXN7BKl5b0o/pagnsoyfjPF7LTMvi/form"
               rel="noreferrer"
               target="_blank"
             >

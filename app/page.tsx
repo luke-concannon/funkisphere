@@ -3,7 +3,7 @@ import type { ReactElement } from "react"
 export default function HomePage({
   searchParams,
 }: {
-  searchParams: Promise<{ [key: string]: string }>
+  searchParams: Promise<Record<string, string>>
 }): ReactElement {
-  return <main>check one three</main>
+  return <main></main>
 }

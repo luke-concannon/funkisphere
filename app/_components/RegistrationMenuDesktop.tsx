@@ -49,7 +49,7 @@ export function RegistrationMenuDesktop(): ReactElement {
       <li className="group/funk">
         <a
           className="bg-opacity-20 duration-150 ease-in-out"
-          href={`https://airtable.com/app28ABXN7BKl5b0o/pagnsoyfjPF7LTMvi/form`}
+          href="https://airtable.com/app28ABXN7BKl5b0o/pagnsoyfjPF7LTMvi/form"
           rel="noreferrer"
           target="_blank"
         >

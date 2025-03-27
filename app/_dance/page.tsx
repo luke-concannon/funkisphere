@@ -5,19 +5,17 @@ import Link from "next/link"
 
 export default function DancePage(): ReactElement {
   return (
-    <div
-      className={`animate-fadeInFromSmall flex h-full w-full max-w-7xl flex-col`}
-    >
+    <div className="animate-fadeInFromSmall flex h-full w-full max-w-7xl flex-col">
       <Link
         className="group flex h-12 w-full flex-row items-center justify-end px-4 pt-6"
         href={{ pathname: `/`, query: { close_modal: "true" } }}
       >
         {/* <XMarkIcon className="h-8 w-8 shrink-0 fill-slate-500 duration-150 ease-in-out group-hover:scale-110" /> */}
       </Link>
-      <ul className={`flex h-full w-full flex-col px-10`}>
+      <ul className="flex h-full w-full flex-col px-10">
         <Link
-          className={`group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900 opacity-20`}
-          href={`#`}
+          className="group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900 opacity-20"
+          href="#"
         >
           <li className="flex h-full w-full flex-col justify-center">
             <h2 className="text-2xl whitespace-nowrap lg:text-5xl">
@@ -33,8 +31,8 @@ export default function DancePage(): ReactElement {
           <span className="bg-funk-pink h-full w-11/12" />
         </div>
         <Link
-          className={`group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900 opacity-20`}
-          href={`#`}
+          className="group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900 opacity-20"
+          href="#"
         >
           <li className="flex h-full w-full flex-col justify-center">
             <h2 className="text-2xl whitespace-nowrap lg:text-5xl">DOVES</h2>
@@ -48,8 +46,8 @@ export default function DancePage(): ReactElement {
           <span className="bg-funk-pink h-full w-11/12" />
         </div>
         <Link
-          className={`group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900`}
-          href={`/dance/little-funkers`}
+          className="group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900"
+          href="/dance/little-funkers"
         >
           <li className="flex h-full flex-col justify-center">
             <h2 className="text-2xl whitespace-nowrap lg:text-5xl">
@@ -65,8 +63,8 @@ export default function DancePage(): ReactElement {
           <span className="bg-funk-pink h-full w-11/12" />
         </div>
         <Link
-          className={`group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900 opacity-20`}
-          href={`#`}
+          className="group relative flex h-1/4 w-full shrink-0 grow-0 flex-row items-center justify-between space-x-1 text-4xl text-slate-900 opacity-20"
+          href="#"
         >
           <li className="flex h-full w-full flex-col justify-center">
             <h2 className="text-2xl whitespace-nowrap lg:text-5xl">
