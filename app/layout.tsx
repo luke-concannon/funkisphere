@@ -48,12 +48,12 @@ export default function RootLayout({
     >
       <body className="w-screen bg-white">
         <SquiggleWorm colour="lime" />
-        <SquiggleWorm colour="salmon" />
+        {/* <SquiggleWorm colour="salmon" />
         <SquiggleWorm />
 
         <div className="bg-foreground">
           <SquiggleWorm colour="salmon" />
-        </div>
+        </div> */}
 
         {children}
       </body>
