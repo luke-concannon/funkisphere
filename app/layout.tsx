@@ -47,15 +47,17 @@ export default function RootLayout({
       lang="en"
     >
       <body className="w-screen bg-white">
-        <SquiggleWorm colour="lime" />
-        {/* <SquiggleWorm colour="salmon" />
+        <div className="flex h-dvh">
+          <SquiggleWorm colour="lime" />
+          {/* <SquiggleWorm colour="salmon" />
         <SquiggleWorm />
 
         <div className="bg-foreground">
           <SquiggleWorm colour="salmon" />
         </div> */}
 
-        {children}
+          {children}
+        </div>
       </body>
     </html>
   )
