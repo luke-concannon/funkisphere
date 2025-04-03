@@ -3,6 +3,7 @@ import "../styles/globals.css"
 import type { ReactElement } from "react"
 import { Bungee, Bungee_Outline, Open_Sans } from "next/font/google"
 
+import { Logo } from "./_components/Logo"
 import { SquiggleWorm } from "./_components/SquiggleWorm"
 
 const openSans = Open_Sans({
@@ -38,27 +39,43 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}): ReactElement {
+}>): ReactElement {
   return (
     <html
       className={`${openSans.variable} ${bungee.variable} ${bungeeOutline.variable}`}
       lang="en"
     >
-      <body className="w-screen bg-white">
-        <div className="flex h-dvh">
-          <SquiggleWorm colour="lime" />
-          {/* <SquiggleWorm colour="salmon" />
-        <SquiggleWorm />
-
-        <div className="bg-foreground">
-          <SquiggleWorm colour="salmon" />
-        </div> */}
+      <body className="w-screen overflow-x-hidden">
+        <div className="flex w-full flex-col items-center">
+          <div className="bg-background flex h-dvh w-full items-center justify-center">
+            {/* <SquiggleWorm colour="lime" className="min-w-[640px]" /> */}
+            {/* <div className="flex size-1/3"> */}
+            <Logo />
+            {/* </div> */}
+          </div>
+          {/* <div className="bg-foreground h-dvh"></div> */}
+          {/* <Header /> */}
 
           {children}
         </div>
       </body>
     </html>
+  )
+}
+
+function Header() {
+  return (
+    <header className="bg-background fixed top-0 left-0 flex h-20 w-full items-center justify-between px-8 py-4">
+      <div className="flex items-center gap-4">
+        <Logo />
+        <h1 className="font-family-serif text-2xl">The Funkisphere</h1>
+      </div>
+      <nav className="flex items-center gap-4">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
   )
 }

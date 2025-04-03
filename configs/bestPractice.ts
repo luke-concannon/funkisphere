@@ -25,7 +25,6 @@ export const bestPracticeConfig = tseslint.config(
   }),
   {
     rules: {
-      "sonarjs/prefer-read-only-props": 0,
       "unicorn/switch-case-braces": [1, "avoid"],
       "unicorn/prevent-abbreviations": [
         1,
