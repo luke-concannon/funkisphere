@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-serif: var(--font-bungee);
   --font-serif-outline: var(--font-bungeeOutline);
-  --font-sans: var(--font-openSans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -47,28 +47,11 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@theme {
-  --font-family-serif:
-    var(--font-bungee), var(--font-bungeeOutline),
-    /* Default serif fonts from Tailwind */;
-  --font-family-sans:
-    var(--font-openSans), /* Default sans fonts from Tailwind */;
-
-  --color-funk-lime: #d8ff5a;
-  --color-funk-pink: #ff61d3;
-  --color-funk-mango: #ffae70;
-  --color-funk-green: #7ed957;
-  --color-funk-dark-green: #008037;
-  --color-funk-dark-pink: #fb92ff;
-  --color-funk-red: #ca3800;
-  --color-funk-yellow: #ffff33;
-  --color-funk-dark-yellow: #f5af0c;
-  --color-funk-purple: #d103d1;
-}
-
 :root {
   --background: oklch(70.44% 0.187 23.19);
-  --foreground: oklch(0.9297 0.182 129.21);
+  --background-burgundy: oklch(32.44% 0.133 354.41);
+  --foreground: oklch(92.97% 0.182 129.21);
+  --foreground-purple: oklch(69.64% 0.202 305.54);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -142,6 +125,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-foreground text-foreground;
   }
 }

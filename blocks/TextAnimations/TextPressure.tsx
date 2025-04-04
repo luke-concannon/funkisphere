@@ -1,7 +1,8 @@
+"use client"
+
 /*
 	Installed from https://reactbits.dev/ts/tailwind/
 */
-
 import { useEffect, useRef, useState } from "react"
 
 interface TextPressureProps {
@@ -52,7 +53,10 @@ export const TextPressure: React.FC<TextPressureProps> = ({
 
   const chars = [...text]
 
-  const distribution = (a: { x: number; y: number }, b: { x: number; y: number }) => {
+  const distribution = (
+    a: { x: number; y: number },
+    b: { x: number; y: number }
+  ) => {
     const dx = b.x - a.x
     const dy = b.y - a.y
     return Math.hypot(dx, dy)
@@ -148,7 +152,8 @@ export const TextPressure: React.FC<TextPressureProps> = ({
             minValue: number,
             maxValue: number
           ) => {
-            const value = maxValue - Math.abs((maxValue * distance) / maxDistribution)
+            const value =
+              maxValue - Math.abs((maxValue * distance) / maxDistribution)
             return Math.max(minValue, value + minValue)
           }
 

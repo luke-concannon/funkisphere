@@ -1,15 +1,25 @@
 import "../styles/globals.css"
 
 import type { ReactElement } from "react"
-import { Bungee, Bungee_Outline, Open_Sans } from "next/font/google"
+import { Bungee, Bungee_Outline, Inter, Open_Sans } from "next/font/google"
 
+import { TextPressure } from "../blocks/TextAnimations/TextPressure"
+import { HeroLogo } from "./_components/HeroLogo"
+import { HeroTagline } from "./_components/HeroTagline"
+import { HeroTitle } from "./_components/HeroTitle"
 import { Logo } from "./_components/Logo"
+import { ParticlesBackground } from "./_components/ParticlesBackground"
 import { SquiggleWorm } from "./_components/SquiggleWorm"
-import { HeroLogo } from "./HeroLogo"
 
 const openSans = Open_Sans({
   display: "swap",
   variable: "--font-openSans",
+  subsets: ["latin"],
+})
+
+const inter = Inter({
+  display: "swap",
+  variable: "--font-inter",
   subsets: ["latin"],
 })
 
@@ -45,26 +55,45 @@ export default function RootLayout({
 }>): ReactElement {
   return (
     <html
-      className={`${openSans.variable} ${bungee.variable} ${bungeeOutline.variable}`}
+      className={`${openSans.variable} ${bungee.variable} ${bungeeOutline.variable} ${inter.variable}`}
       lang="en"
     >
       <body className="w-screen overflow-x-hidden">
-        <div className="bg-background flex h-dvh w-full items-center justify-center">
+        <div className="bg-background relative flex min-h-dvh w-full items-center justify-center overflow-hidden">
+          <div className="fixed h-screen w-screen">
+            <ParticlesBackground />
+          </div>
+          <div className="absolute w-full">
+            <HeroLogo />
+          </div>
+
+          <div className="w-3/4">
+            <HeroTitle />
+          </div>
+
+          {/* <div className="fixed top-10 left-1/2 -translate-x-1/2">
+            <HeroTagline />
+          </div> */}
+
           {/* <SquiggleWorm colour="lime" className="min-w-[640px]" /> */}
           {/* <div className="flex size-1/3"> */}
-          <div className="relative w-3/5 sm:w-2/5 lg:w-1/3">
-            {/* <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 overflow-visible text-center">
+          {/* <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 overflow-visible text-center">
               <h1 className="font-serif text-7xl text-black">Funkisphere</h1>
               <p className="font-sans text-3xl text-black/50">
                 Keeping things funky for kids in the bay
               </p>
             </div> */}
-            <HeroLogo />
-          </div>
+
           {/* </div> */}
           {/* </div> */}
           {/* <div className="bg-foreground h-dvh"></div> */}
           {/* <Header /> */}
+        </div>
+        <div className="bg-foreground relative flex min-h-dvh w-full items-center justify-center overflow-hidden">
+          <SquiggleWorm colour="salmon" />
+        </div>
+        <div className="bg-background relative flex min-h-dvh w-full items-center justify-center overflow-hidden">
+          <SquiggleWorm />
         </div>
         {children}
       </body>
