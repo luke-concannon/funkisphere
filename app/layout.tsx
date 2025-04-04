@@ -5,6 +5,7 @@ import { Bungee, Bungee_Outline, Open_Sans } from "next/font/google"
 
 import { Logo } from "./_components/Logo"
 import { SquiggleWorm } from "./_components/SquiggleWorm"
+import { HeroLogo } from "./HeroLogo"
 
 const openSans = Open_Sans({
   display: "swap",
@@ -48,18 +49,24 @@ export default function RootLayout({
       lang="en"
     >
       <body className="w-screen overflow-x-hidden">
-        <div className="flex w-full flex-col items-center">
-          <div className="bg-background flex h-dvh w-full items-center justify-center">
-            {/* <SquiggleWorm colour="lime" className="min-w-[640px]" /> */}
-            {/* <div className="flex size-1/3"> */}
-            <Logo />
-            {/* </div> */}
+        <div className="bg-background flex h-dvh w-full items-center justify-center">
+          {/* <SquiggleWorm colour="lime" className="min-w-[640px]" /> */}
+          {/* <div className="flex size-1/3"> */}
+          <div className="relative w-3/5 sm:w-2/5 lg:w-1/3">
+            {/* <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 overflow-visible text-center">
+              <h1 className="font-serif text-7xl text-black">Funkisphere</h1>
+              <p className="font-sans text-3xl text-black/50">
+                Keeping things funky for kids in the bay
+              </p>
+            </div> */}
+            <HeroLogo />
           </div>
+          {/* </div> */}
+          {/* </div> */}
           {/* <div className="bg-foreground h-dvh"></div> */}
           {/* <Header /> */}
-
-          {children}
         </div>
+        {children}
       </body>
     </html>
   )

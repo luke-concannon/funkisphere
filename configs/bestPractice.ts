@@ -31,6 +31,7 @@ export const bestPracticeConfig = tseslint.config(
         {
           allowList: {
             props: true,
+            Props: true,
             params: true,
             Params: true,
             ref: true,
