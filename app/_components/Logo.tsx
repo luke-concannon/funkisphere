@@ -1,3 +1,5 @@
+import { SquiggleWorm } from "./SquiggleWorm"
+
 export function Logo() {
   return (
     <div className="relative flex aspect-square flex-row flex-wrap">

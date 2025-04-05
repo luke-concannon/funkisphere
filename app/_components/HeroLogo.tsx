@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react"
 
+import { SquiggleWorm } from "./SquiggleWorm"
+
 const containerVariants = {
   hidden: {},
   visible: {

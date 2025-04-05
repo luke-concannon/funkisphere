@@ -26,6 +26,7 @@ export const bestPracticeConfig = tseslint.config(
   {
     rules: {
       "unicorn/switch-case-braces": [1, "avoid"],
+      "unicorn/no-null": 0,
       "unicorn/prevent-abbreviations": [
         1,
         {
