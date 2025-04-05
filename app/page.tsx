@@ -1,16 +1,25 @@
 import { HeroLogo } from "./_components/HeroLogo"
 import { HeroTitle } from "./_components/HeroTitle"
 import { SquiggleWorm } from "./_components/SquiggleWorm"
+import { SquiggleWorm2 } from "./_components/SquiggleWorm2"
+import { SquiggleWorm3 } from "./_components/SquiggleWorm3"
+import { SquiggleWorm4 } from "./_components/SquiggleWorm4"
 
 export default function HomePage(): React.ReactElement {
   return (
     <main className="flex flex-1 flex-col">
       <HeroSection />
       <div className="w-full">
-        <SquiggleWorm />
+        <SquiggleWorm colour="purple" />
       </div>
       <div className="w-full">
-        <SquiggleWorm />
+        <SquiggleWorm2 colour="lime" />
+      </div>
+      <div className="w-full">
+        <SquiggleWorm3 colour="burgundy" />
+      </div>
+      <div className="w-full">
+        <SquiggleWorm4 />
       </div>
     </main>
   )

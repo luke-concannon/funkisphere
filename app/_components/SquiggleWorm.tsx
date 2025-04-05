@@ -1,19 +1,12 @@
-const getLineColour = (colour: "lime" | "salmon") => {
-  switch (colour) {
-    case "lime":
-      return "oklch(0.9297 0.182 129.21)"
-    case "salmon":
-      return "oklch(0.7044 0.187 23.19)"
-    default:
-      return "oklch(0.9297 0.182 129.21)"
-  }
-}
+import { SquiggleWormColour } from "@/@types"
+
+import { getSvgFillColour } from "../_utils/getSvgFillColour"
 
 export const SquiggleWorm = ({
   colour = "lime",
   ...props
-}: React.SVGProps<SVGSVGElement> & { colour?: "lime" | "salmon" }) => {
-  const lineFill = getLineColour(colour)
+}: React.SVGProps<SVGSVGElement> & { colour?: SquiggleWormColour }) => {
+  const lineFill = getSvgFillColour(colour)
 
   return (
     <svg
