@@ -1,6 +1,6 @@
 import type { SemanticBrandColours } from "@/@types"
 
-export function Logo({ colour }: { colour?: SemanticBrandColours }) {
+export function Logo({ colour = "lime" }: { colour?: SemanticBrandColours }) {
   return (
     <div className="relative flex aspect-square flex-row flex-wrap">
       {Array.from({ length: 9 }).map((_, index) => (

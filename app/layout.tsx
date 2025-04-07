@@ -6,6 +6,7 @@ import { Bungee, Bungee_Outline, Inter, Open_Sans } from "next/font/google"
 import { Footer } from "./_components/Footer"
 import { Header } from "./_components/Header"
 import { Logo } from "./_components/Logo"
+import { HeaderStoreProvider } from "./_store/HeaderStore"
 
 const openSans = Open_Sans({
   display: "swap",
@@ -55,9 +56,11 @@ export default function RootLayout({
       lang="en"
     >
       <body className="w-screen overflow-x-hidden">
-        <Header />
-        {children}
-        {/* <Footer /> */}
+        <HeaderStoreProvider>
+          <Header />
+          {children}
+          {/* <Footer /> */}
+        </HeaderStoreProvider>
       </body>
     </html>
   )

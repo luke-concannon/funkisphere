@@ -1,5 +1,4 @@
-import { HeroLogo } from "./_components/HeroLogo"
-import { HeroTitle } from "./_components/HeroTitle"
+import { HeroSection } from "./_components/HeroSection"
 import { SquiggleWorm1 } from "./_components/SquiggleWorm1"
 import { SquiggleWorm2 } from "./_components/SquiggleWorm2"
 import { SquiggleWorm3 } from "./_components/SquiggleWorm3"
@@ -34,18 +33,5 @@ export default function HomePage(): React.ReactElement {
         <SquiggleWorm7 />
       </div>
     </main>
-  )
-}
-
-function HeroSection(): React.ReactElement {
-  return (
-    <div className="relative flex min-h-dvh">
-      <div className="w-full p-10">
-        <HeroLogo />
-      </div>
-      <div className="absolute flex min-h-dvh w-full flex-col justify-end p-10">
-        <HeroTitle />
-      </div>
-    </div>
   )
 }
