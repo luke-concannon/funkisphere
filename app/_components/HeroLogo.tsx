@@ -2,8 +2,6 @@
 
 import { motion } from "motion/react"
 
-import { SquiggleWorm } from "./SquiggleWorm"
-
 const containerVariants = {
   hidden: {},
   visible: {
@@ -38,8 +36,12 @@ export function HeroLogo() {
       {Array.from({ length: 9 }).map((_, index) => (
         <motion.div
           key={index}
-          className="bg-foreground size-1/3 rounded-full shadow-xl"
+          className="bg-foreground size-1/3 cursor-grab rounded-full shadow-xl active:cursor-grabbing"
           variants={logoVariants}
+          drag
+          dragMomentum={false}
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          dragElastic={0.1}
         />
       ))}
     </motion.div>

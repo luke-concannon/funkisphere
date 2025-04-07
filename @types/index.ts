@@ -1,1 +1,1 @@
-export type SquiggleWormColour = "lime" | "salmon" | "purple" | "burgundy"
+export type SemanticBrandColours = "lime" | "salmon" | "purple" | "burgundy"

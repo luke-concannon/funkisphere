@@ -47,11 +47,16 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@theme {
+  --color-funk-lime: oklch(92.97% 0.182 129.21);
+  --color-funk-salmon: oklch(70.44% 0.187 23.19);
+  --color-funk-burgundy: oklch(32.44% 0.133 354.41);
+  --color-funk-purple: oklch(69.64% 0.202 305.54);
+}
+
 :root {
   --background: oklch(70.44% 0.187 23.19);
-  --background-burgundy: oklch(32.44% 0.133 354.41);
   --foreground: oklch(92.97% 0.182 129.21);
-  --foreground-purple: oklch(69.64% 0.202 305.54);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

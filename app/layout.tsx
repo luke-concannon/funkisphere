@@ -3,6 +3,10 @@ import "../styles/globals.css"
 import type { ReactElement } from "react"
 import { Bungee, Bungee_Outline, Inter, Open_Sans } from "next/font/google"
 
+import { Footer } from "./_components/Footer"
+import { Header } from "./_components/Header"
+import { Logo } from "./_components/Logo"
+
 const openSans = Open_Sans({
   display: "swap",
   variable: "--font-openSans",
@@ -50,7 +54,11 @@ export default function RootLayout({
       className={`${openSans.variable} ${bungee.variable} ${bungeeOutline.variable} ${inter.variable}`}
       lang="en"
     >
-      <body className="w-screen overflow-x-hidden">{children}</body>
+      <body className="w-screen overflow-x-hidden">
+        <Header />
+        {children}
+        {/* <Footer /> */}
+      </body>
     </html>
   )
 }

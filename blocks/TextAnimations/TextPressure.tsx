@@ -51,7 +51,7 @@ export const TextPressure: React.FC<TextPressureProps> = ({
   const [scaleY, setScaleY] = useState(1)
   const [lineHeight, setLineHeight] = useState(1)
 
-  const chars = [...text]
+  const chars = text.split("")
 
   const distribution = (
     a: { x: number; y: number },
@@ -123,7 +123,9 @@ export const TextPressure: React.FC<TextPressureProps> = ({
   useEffect(() => {
     setSize()
     window.addEventListener("resize", setSize)
-    return () => window.removeEventListener("resize", setSize)
+    return () => {
+      window.removeEventListener("resize", setSize)
+    }
   }, [scale, text])
 
   useEffect(() => {
@@ -171,7 +173,9 @@ export const TextPressure: React.FC<TextPressureProps> = ({
     }
 
     animate()
-    return () => cancelAnimationFrame(rafId)
+    return () => {
+      cancelAnimationFrame(rafId)
+    }
   }, [width, weight, italic, alpha, chars.length])
 
   return (
