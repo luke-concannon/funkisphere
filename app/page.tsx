@@ -1,11 +1,11 @@
 import { HeroSection } from "./_components/HeroSection"
-import { SquiggleWorm1 } from "./_components/SquiggleWorm1"
-import { SquiggleWorm2 } from "./_components/SquiggleWorm2"
-import { SquiggleWorm3 } from "./_components/SquiggleWorm3"
-import { SquiggleWorm4 } from "./_components/SquiggleWorm4"
-import { SquiggleWorm5 } from "./_components/SquiggleWorm5"
-import { SquiggleWorm6 } from "./_components/SquiggleWorm6"
-import { SquiggleWorm7 } from "./_components/SquiggleWorm7"
+import { SquiggleWorm1 } from "./_components/squiggles/SquiggleWorm1"
+import { SquiggleWorm2 } from "./_components/squiggles/SquiggleWorm2"
+import { SquiggleWorm3 } from "./_components/squiggles/SquiggleWorm3"
+import { SquiggleWorm4 } from "./_components/squiggles/SquiggleWorm4"
+import { SquiggleWorm5 } from "./_components/squiggles/SquiggleWorm5"
+import { SquiggleWorm6 } from "./_components/squiggles/SquiggleWorm6"
+import { SquiggleWorm7 } from "./_components/squiggles/SquiggleWorm7"
 
 export default function HomePage(): React.ReactElement {
   return (

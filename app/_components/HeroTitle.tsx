@@ -31,7 +31,7 @@ export function HeroTitle() {
         width={true}
         weight={true}
         italic={true}
-        textColor="oklch(32.44% 0.133 354.41)"
+        textColor="black"
       />
     </motion.div>
   )

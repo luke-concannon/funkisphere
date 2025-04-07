@@ -6,20 +6,23 @@ import { createStore } from "zustand/vanilla"
 
 interface HeaderState {
   showHeader: boolean
+  headerIsShowable: boolean
 }
 
 interface HeaderActions {
   setShowHeader: (show: boolean) => void
+  setHeaderIsShowable: (show: boolean) => void
 }
 
 type HeaderStore = HeaderState & HeaderActions
 
 const initHeaderStore = (): HeaderState => {
-  return { showHeader: false }
+  return { showHeader: false, headerIsShowable: false }
 }
 
 const defaultInitState: HeaderState = {
   showHeader: false,
+  headerIsShowable: false,
 }
 
 const createHeaderStore = (initState: HeaderState = defaultInitState) => {
@@ -27,6 +30,9 @@ const createHeaderStore = (initState: HeaderState = defaultInitState) => {
     ...initState,
     setShowHeader: (show: boolean) => {
       set({ showHeader: show })
+    },
+    setHeaderIsShowable: (show: boolean) => {
+      set({ headerIsShowable: show })
     },
   }))
 }

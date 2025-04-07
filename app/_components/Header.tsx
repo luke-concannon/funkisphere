@@ -6,13 +6,17 @@ import { useHeaderStore } from "../_store/HeaderStore"
 import { Logo } from "./Logo"
 
 export function Header(): React.ReactElement {
-  const { showHeader, setShowHeader } = useHeaderStore((state) => state)
+  const { showHeader, setShowHeader, headerIsShowable } = useHeaderStore(
+    (state) => state
+  )
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (current) => {
     const previous = scrollY.getPrevious() ?? 0
     const diff = current - previous
-    setShowHeader(diff <= 0)
+    if (headerIsShowable) {
+      setShowHeader(diff <= 0)
+    }
   })
 
   return (
@@ -24,6 +28,7 @@ export function Header(): React.ReactElement {
       <div className="size-14">
         <Logo />
       </div>
+      <h1 className="text-funk-burgundy text-3xl font-bold">FUNKISPHERE</h1>
     </header>
   )
 }

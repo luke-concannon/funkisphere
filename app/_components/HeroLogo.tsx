@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react"
 
+import { useHeaderStore } from "../_store/HeaderStore"
+
 const containerVariants = {
   hidden: {},
   visible: {
@@ -26,12 +28,22 @@ const logoVariants = {
 }
 
 export function HeroLogo() {
+  const { setHeaderIsShowable, setShowHeader } = useHeaderStore(
+    (state) => state
+  )
   return (
     <motion.div
-      className="relative flex aspect-square flex-1 flex-wrap items-center"
+      className="relative flex aspect-square w-full flex-wrap items-center md:h-full md:w-auto"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      onViewportEnter={() => {
+        setShowHeader(false)
+        setHeaderIsShowable(false)
+      }}
+      onViewportLeave={() => {
+        setHeaderIsShowable(true)
+      }}
     >
       {Array.from({ length: 9 }).map((_, index) => (
         <motion.div
