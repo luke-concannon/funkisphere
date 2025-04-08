@@ -1,3 +1,5 @@
+import { Card } from "@/components/ui/card"
+
 import { HeroSection } from "./_components/HeroSection"
 import { SquiggleWorm1 } from "./_components/squiggles/SquiggleWorm1"
 import { SquiggleWorm2 } from "./_components/squiggles/SquiggleWorm2"
@@ -11,6 +13,11 @@ export default function HomePage(): React.ReactElement {
   return (
     <main className="">
       <HeroSection />
+
+      <div className="flex h-dvh w-full flex-col items-center justify-start" />
+      <div className="h-dvh w-full" />
+      <div className="h-dvh w-full" />
+      {/* 
       <div className="w-full">
         <SquiggleWorm1 colour="purple" />
       </div>
@@ -31,7 +38,7 @@ export default function HomePage(): React.ReactElement {
       </div>
       <div className="w-full">
         <SquiggleWorm7 />
-      </div>
+      </div> */}
     </main>
   )
 }

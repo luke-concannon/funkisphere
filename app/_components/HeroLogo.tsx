@@ -1,6 +1,12 @@
 "use client"
 
-import { motion } from "motion/react"
+import {
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react"
 
 import { useHeaderStore } from "../_store/HeaderStore"
 
@@ -28,32 +34,57 @@ const logoVariants = {
 }
 
 export function HeroLogo() {
+  const { scrollY } = useScroll()
   const { setHeaderIsShowable, setShowHeader } = useHeaderStore(
     (state) => state
   )
+
+  // Shrink the circles as the user scrolls
+  const scale = useTransform(scrollY, [0, 500], [1, 0.2])
+
+  // Move the circles to the top-left corner
+  const top = useTransform(scrollY, [0, 500], [0, -300])
+  const left = useTransform(scrollY, [0, 500], [0, -300])
+
+  // const y = useMotionValue(0)
+
+  // useMotionValueEvent(y, "animationStart", () => {
+  //   console.log("animation started on y")
+  // })
+
+  // useMotionValueEvent(y, "change", (latest) => {
+  //   console.log("y changed to", latest)
+  // })
+
+  useMotionValueEvent(scrollY, "change", (current) => {
+    const previous = scrollY.getPrevious() ?? 0
+    const diff = current - previous
+
+    console.log(previous)
+  })
+
   return (
     <motion.div
-      className="relative flex aspect-square w-full flex-wrap items-center md:h-full md:w-auto"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      onViewportEnter={() => {
-        setShowHeader(false)
-        setHeaderIsShowable(false)
-      }}
-      onViewportLeave={() => {
-        setHeaderIsShowable(true)
-      }}
+      className="flex aspect-square size-full max-w-[800px] flex-wrap items-center"
+      // style={{ scale, top, left }}
+
+      // onViewportEnter={() => {
+      //   setShowHeader(false)
+      //   setHeaderIsShowable(false)
+      // }}
+      // onViewportLeave={() => {
+      //   setHeaderIsShowable(true)
+      // }}
     >
       {Array.from({ length: 9 }).map((_, index) => (
         <motion.div
           key={index}
-          className="bg-foreground size-1/3 cursor-grab rounded-full shadow-xl active:cursor-grabbing"
-          variants={logoVariants}
-          drag
-          dragMomentum={false}
-          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-          dragElastic={0.1}
+          className="bg-foreground size-1/3 rounded-full"
+          // variants={logoVariants}
+          // drag
+          // dragMomentum={false}
+          // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          // dragElastic={0.1}
         />
       ))}
     </motion.div>

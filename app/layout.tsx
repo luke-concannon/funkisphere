@@ -55,9 +55,9 @@ export default function RootLayout({
       className={`${openSans.variable} ${bungee.variable} ${bungeeOutline.variable} ${inter.variable}`}
       lang="en"
     >
-      <body className="w-screen overflow-x-hidden">
+      <body className="w-screen">
         <HeaderStoreProvider>
-          <Header />
+          {/* <Header /> */}
           {children}
           {/* <Footer /> */}
         </HeaderStoreProvider>
